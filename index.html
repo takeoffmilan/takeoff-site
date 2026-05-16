@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
 
-  <title>TakeOff Milan — Performance-driven digital studio</title>
-  <meta name="description" content="TakeOff Milan: digital studio specializzato in sviluppo siti, video editing, SEO, social media marketing e soluzioni AI per far crescere il tuo brand." />
+  <title>TakeOff Milan — Performance-driven digital studio | Siti web, SEO, Video, AI</title>
+  <meta name="description" content="TakeOff Milan: digital studio a Milano specializzato in sviluppo siti web, video editing, SEO, social media marketing e CMS proprietario senza abbonamenti mensili." />
+  <meta name="keywords" content="agenzia digitale Milano, sviluppo siti web, SEO, video editing, social media marketing, CMS senza abbonamento, AI marketing, TakeOff Milan" />
+  <meta name="author" content="TakeOff Milan" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://takeoffmilan.com/" />
 
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
@@ -14,7 +18,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="TakeOff Milan — Performance-driven digital studio" />
   <meta property="og:description" content="Sviluppo siti, video editing, SEO e AI solutions per far crescere il tuo brand." />
-  <meta property="og:image" content="/images/logo.png" />
+  <meta property="og:image" content="https://takeoffmilan.com/images/logo.png" />
   <meta property="og:url" content="https://takeoffmilan.com" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
@@ -30,11 +34,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://takeoffmilan.com/#organization",
+        "name": "TakeOff Milan",
+        "url": "https://takeoffmilan.com",
+        "logo": { "@type": "ImageObject", "url": "https://takeoffmilan.com/images/logo.png" },
+        "description": "Performance-driven digital studio: sviluppo siti, video editing, SEO, social media marketing e CMS proprietario senza abbonamenti mensili.",
+        "email": "info@takeoffmilan.com",
+        "sameAs": [
+          "https://youtube.com/@takeoffmilan",
+          "https://tiktok.com/@takeoffmilan",
+          "https://pinterest.com/takeoffmilan"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Milano",
+          "addressCountry": "IT"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://takeoffmilan.com/#website",
+        "url": "https://takeoffmilan.com",
+        "name": "TakeOff Milan",
+        "publisher": { "@id": "https://takeoffmilan.com/#organization" },
+        "inLanguage": "it-IT"
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "TakeOff Milan",
+        "image": "https://takeoffmilan.com/images/logo.png",
+        "url": "https://takeoffmilan.com",
+        "email": "info@takeoffmilan.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Milano",
+          "addressCountry": "IT"
+        },
+        "areaServed": "IT",
+        "priceRange": "€€",
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sviluppo siti web" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video editing & short-form content" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO strategy & optimization" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social media marketing & Google Ads" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CMS TakeOff — hosting Cloudflare senza abbonamenti" } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-  <!-- ===================== HEADER ===================== -->
   <header class="site-header" data-header>
     <div class="header-inner">
       <a href="#top" class="logo-link" aria-label="TakeOff Milan home">
@@ -58,11 +118,8 @@
 
   <main id="top">
 
-    <!-- ===================== HERO ===================== -->
     <section class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-gradient"></div>
-      </div>
+      <div class="hero-bg" aria-hidden="true"><div class="hero-gradient"></div></div>
 
       <div class="hero-content">
         <p class="hero-kicker">Performance-driven digital studio</p>
@@ -76,12 +133,8 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#contact" class="cta-pill">
-            <span>Contact us</span>
-          </a>
-          <a href="#portfolio" class="cta-ghost">
-            <span>See our work →</span>
-          </a>
+          <a href="#contact" class="cta-pill"><span>Contact us</span></a>
+          <a href="#portfolio" class="cta-ghost"><span>See our work →</span></a>
         </div>
 
         <div class="hero-mockups" data-reveal>
@@ -92,7 +145,6 @@
       </div>
     </section>
 
-    <!-- ===================== INTRO COPY ===================== -->
     <section class="to-copy" id="about" aria-label="Chi siamo">
       <h2 class="to-title">
         Your digital growth <span class="grad-move">starts here.</span>
@@ -117,117 +169,75 @@
         </p>
       </div>
 
-      <a class="cta-pill" href="#contact">
-        <span>CONTACT US NOW</span>
-      </a>
+      <a class="cta-pill" href="#contact"><span>CONTACT US NOW</span></a>
     </section>
 
-    <!-- ===================== SUCCESS STORIES ===================== -->
     <section class="success-stories" id="portfolio" aria-label="Casi studio">
-      <h2 class="section-title">
-        Our <span class="grad-move">Success</span> Stories
-      </h2>
-      <p class="section-subtitle">
-        Brand reali che hanno trasformato la loro presenza digitale con noi.
-      </p>
+      <h2 class="section-title">Our <span class="grad-move">Success</span> Stories</h2>
+      <p class="section-subtitle">Brand reali che hanno trasformato la loro presenza digitale con noi.</p>
 
       <div class="cs-grid">
         <article class="cs-card" data-reveal>
-          <div class="cs-media">
-            <img src="/images/portfolio/bimbo-felice.png" alt="Bimbo Felice" loading="lazy" />
-          </div>
+          <div class="cs-media"><img src="/images/portfolio/bimbo-felice.png" alt="Bimbo Felice" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">E-commerce · Integratori</p>
             <h3>Bimbo Felice</h3>
-            <p class="cs-desc">
-              E-commerce dedicato agli integratori per bambini. Sviluppo sito, ottimizzazione conversioni, gestione campagne ads.
-            </p>
+            <p class="cs-desc">E-commerce dedicato agli integratori per bambini. Sviluppo sito, ottimizzazione conversioni, gestione campagne ads.</p>
           </div>
         </article>
 
         <article class="cs-card" data-reveal>
-          <div class="cs-media">
-            <img src="/images/portfolio/veda.png" alt="VEDA Yachts" loading="lazy" />
-          </div>
+          <div class="cs-media"><img src="/images/portfolio/veda.png" alt="VEDA Yachts" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">Luxury · Nautica</p>
             <h3>VEDA Yachts</h3>
-            <p class="cs-desc">
-              Sito istituzionale per cantiere nautico premium. Configuratore imbarcazioni, esperienza visiva immersiva.
-            </p>
+            <p class="cs-desc">Sito istituzionale per cantiere nautico premium. Configuratore imbarcazioni, esperienza visiva immersiva.</p>
           </div>
         </article>
 
         <article class="cs-card" data-reveal>
-          <div class="cs-media">
-            <img src="/images/portfolio/barbiere-blocco.png" alt="Il Barbiere del Blocco" loading="lazy" />
-          </div>
+          <div class="cs-media"><img src="/images/portfolio/barbiere-blocco.png" alt="Il Barbiere del Blocco" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">Brand · Box mensile</p>
             <h3>Il Barbiere del Blocco</h3>
-            <p class="cs-desc">
-              Subscription box per il barbiere moderno. Sito + integrazione abbonamenti + video content strategy.
-            </p>
+            <p class="cs-desc">Subscription box per il barbiere moderno. Sito + integrazione abbonamenti + video content strategy.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ===================== MARQUEE ===================== -->
     <section class="marquee-section" aria-hidden="true">
       <div class="marquee">
         <div class="marquee-track">
-          <span>WEBSITE DESIGN</span>
-          <span class="dot">•</span>
-          <span>VIDEO EDITING</span>
-          <span class="dot">•</span>
-          <span>SEO STRATEGY</span>
-          <span class="dot">•</span>
-          <span>SOCIAL MEDIA</span>
-          <span class="dot">•</span>
-          <span>GOOGLE ADS</span>
-          <span class="dot">•</span>
-          <span>AI SOLUTIONS</span>
-          <span class="dot">•</span>
-          <span>CMS TAKEOFF</span>
-          <span class="dot">•</span>
-          <!-- duplicato per loop seamless -->
-          <span>WEBSITE DESIGN</span>
-          <span class="dot">•</span>
-          <span>VIDEO EDITING</span>
-          <span class="dot">•</span>
-          <span>SEO STRATEGY</span>
-          <span class="dot">•</span>
-          <span>SOCIAL MEDIA</span>
-          <span class="dot">•</span>
-          <span>GOOGLE ADS</span>
-          <span class="dot">•</span>
-          <span>AI SOLUTIONS</span>
-          <span class="dot">•</span>
-          <span>CMS TAKEOFF</span>
-          <span class="dot">•</span>
+          <span>WEBSITE DESIGN</span><span class="dot">•</span>
+          <span>VIDEO EDITING</span><span class="dot">•</span>
+          <span>SEO STRATEGY</span><span class="dot">•</span>
+          <span>SOCIAL MEDIA</span><span class="dot">•</span>
+          <span>GOOGLE ADS</span><span class="dot">•</span>
+          <span>AI SOLUTIONS</span><span class="dot">•</span>
+          <span>CMS TAKEOFF</span><span class="dot">•</span>
+          <span>WEBSITE DESIGN</span><span class="dot">•</span>
+          <span>VIDEO EDITING</span><span class="dot">•</span>
+          <span>SEO STRATEGY</span><span class="dot">•</span>
+          <span>SOCIAL MEDIA</span><span class="dot">•</span>
+          <span>GOOGLE ADS</span><span class="dot">•</span>
+          <span>AI SOLUTIONS</span><span class="dot">•</span>
+          <span>CMS TAKEOFF</span><span class="dot">•</span>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SERVICES ===================== -->
     <section class="svcAI" id="services" aria-label="I nostri servizi">
-      <h2 class="section-title">
-        I nostri <span class="grad-move">servizi</span>
-      </h2>
+      <h2 class="section-title">I nostri <span class="grad-move">servizi</span></h2>
 
       <article class="svc-card from-right" data-reveal>
         <div class="svc-inner">
-          <div class="svc-media">
-            <div class="svc-mediaFrame">
-              <img src="/images/portfolio/veda.png" alt="Website Design" loading="lazy" />
-            </div>
-          </div>
+          <div class="svc-media"><div class="svc-mediaFrame">
+            <img src="/images/portfolio/veda.png" alt="Website Design" loading="lazy" />
+          </div></div>
           <div class="svc-content align-right">
             <h3 class="svc-title">Website Design &amp; Development</h3>
-            <p class="svc-text">
-              Costruiamo siti veloci, ottimizzati per la conversione, usando AI per ridurre tempi e costi senza compromettere UX, struttura e performance.
-            </p>
+            <p class="svc-text">Costruiamo siti veloci, ottimizzati per la conversione, usando AI per ridurre tempi e costi senza compromettere UX, struttura e performance.</p>
             <a class="svc-cta" href="#contact"><span>Contact us now</span></a>
           </div>
         </div>
@@ -235,16 +245,12 @@
 
       <article class="svc-card from-left" data-reveal>
         <div class="svc-inner reverse">
-          <div class="svc-media">
-            <div class="svc-mediaFrame">
-              <img src="/images/portfolio/barbiere-blocco.png" alt="Video Editing" loading="lazy" />
-            </div>
-          </div>
+          <div class="svc-media"><div class="svc-mediaFrame">
+            <img src="/images/portfolio/barbiere-blocco.png" alt="Video Editing" loading="lazy" />
+          </div></div>
           <div class="svc-content align-left">
             <h3 class="svc-title">Video Editing &amp; Short-Form Content</h3>
-            <p class="svc-text">
-              Editing video AI-driven per creare contenuti rapidi e coinvolgenti, riducendo tempi di produzione e costi.
-            </p>
+            <p class="svc-text">Editing video AI-driven per creare contenuti rapidi e coinvolgenti, riducendo tempi di produzione e costi.</p>
             <a class="svc-cta" href="#contact"><span>Contact us now</span></a>
           </div>
         </div>
@@ -252,16 +258,12 @@
 
       <article class="svc-card from-right" data-reveal>
         <div class="svc-inner">
-          <div class="svc-media">
-            <div class="svc-mediaFrame">
-              <img src="/images/portfolio/bimbo-felice.png" alt="SEO Strategy" loading="lazy" />
-            </div>
-          </div>
+          <div class="svc-media"><div class="svc-mediaFrame">
+            <img src="/images/portfolio/bimbo-felice.png" alt="SEO Strategy" loading="lazy" />
+          </div></div>
           <div class="svc-content align-right">
             <h3 class="svc-title">SEO Strategy &amp; Optimization</h3>
-            <p class="svc-text">
-              La SEO non è automatica. L'AI supporta la ricerca, ma i risultati arrivano da struttura, strategia e ottimizzazione fatte a mano.
-            </p>
+            <p class="svc-text">La SEO non è automatica. L'AI supporta la ricerca, ma i risultati arrivano da struttura, strategia e ottimizzazione fatte a mano.</p>
             <a class="svc-cta" href="#contact"><span>Contact us now</span></a>
           </div>
         </div>
@@ -269,80 +271,57 @@
 
       <article class="svc-card from-left" data-reveal>
         <div class="svc-inner reverse">
-          <div class="svc-media">
-            <div class="svc-mediaFrame">
-              <img src="/images/laptop-mockup.webp" alt="SMM & Ads" loading="lazy" />
-            </div>
-          </div>
+          <div class="svc-media"><div class="svc-mediaFrame">
+            <img src="/images/laptop-mockup.webp" alt="SMM & Ads" loading="lazy" />
+          </div></div>
           <div class="svc-content align-left">
             <h3 class="svc-title">SMM &amp; Google Ads Strategy</h3>
-            <p class="svc-text">
-              Strategie data-driven su Google Ads, TikTok Ads e Meta Ads, integrate con social media marketing che fanno crescere il brand e convertono.
-            </p>
+            <p class="svc-text">Strategie data-driven su Google Ads, TikTok Ads e Meta Ads, integrate con social media marketing che fanno crescere il brand e convertono.</p>
             <a class="svc-cta" href="#contact"><span>Contact us now</span></a>
           </div>
         </div>
       </article>
 
-      <!-- 5° servizio NUOVO: CMS TakeOff -->
       <article class="svc-card svc-card--feature from-right" data-reveal>
         <div class="svc-inner">
-          <div class="svc-media">
-            <div class="svc-mediaFrame">
-              <img src="/images/laptop-mockup.webp" alt="CMS TakeOff" loading="lazy" />
-            </div>
-          </div>
+          <div class="svc-media"><div class="svc-mediaFrame">
+            <img src="/images/laptop-mockup.webp" alt="CMS TakeOff" loading="lazy" />
+          </div></div>
           <div class="svc-content align-right">
             <span class="svc-badge">NOVITÀ</span>
             <h3 class="svc-title">CMS TakeOff — Zero costi mensili</h3>
-            <p class="svc-text">
-              Il nostro CMS proprietario hostato su Cloudflare. Stesse funzionalità di Shopify, ma senza abbonamento mensile per i tuoi clienti.
-            </p>
+            <p class="svc-text">Il nostro CMS proprietario hostato su Cloudflare. Stesse funzionalità di Shopify, ma senza abbonamento mensile per i tuoi clienti.</p>
             <a class="svc-cta" href="#contact"><span>Scopri di più</span></a>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ===================== TESTIMONIALS ===================== -->
     <section class="testimonials" aria-label="Testimonianze">
-      <h2 class="section-title">
-        What Our <span class="grad-move">Clients</span> Say
-      </h2>
+      <h2 class="section-title">What Our <span class="grad-move">Clients</span> Say</h2>
 
       <div class="testi-grid">
         <article class="testi-card" data-reveal>
-          <p class="testi-quote">
-            "Hanno trasformato il nostro e-commerce. +180% di conversioni in 4 mesi, e finalmente un sito veloce e moderno."
-          </p>
+          <p class="testi-quote">"Hanno trasformato il nostro e-commerce. +180% di conversioni in 4 mesi, e finalmente un sito veloce e moderno."</p>
           <p class="testi-author">Bimbo Felice — Founder</p>
         </article>
 
         <article class="testi-card" data-reveal>
-          <p class="testi-quote">
-            "Professionalità, velocità e idee fresche. Il sito VEDA Yachts ora rappresenta davvero il nostro brand."
-          </p>
+          <p class="testi-quote">"Professionalità, velocità e idee fresche. Il sito VEDA Yachts ora rappresenta davvero il nostro brand."</p>
           <p class="testi-author">VEDA Yachts — Marketing Manager</p>
         </article>
 
         <article class="testi-card" data-reveal>
-          <p class="testi-quote">
-            "Lavorare con TakeOff è stato un game changer. Strategia, esecuzione e risultati misurabili."
-          </p>
+          <p class="testi-quote">"Lavorare con TakeOff è stato un game changer. Strategia, esecuzione e risultati misurabili."</p>
           <p class="testi-author">Il Barbiere del Blocco — Owner</p>
         </article>
       </div>
     </section>
 
-    <!-- ===================== FINAL CTA / CONTACT ===================== -->
     <section class="final-cta" id="contact" aria-label="Contattaci">
       <div class="final-cta-inner">
-        <h2 class="section-title light">
-          Pronto a <span class="grad-move">decollare</span>?
-        </h2>
-        <p class="final-cta-subtitle">
-          Scrivici e ti rispondiamo entro 24 ore con una prima analisi del tuo progetto.
-        </p>
+        <h2 class="section-title light">Pronto a <span class="grad-move">decollare</span>?</h2>
+        <p class="final-cta-subtitle">Scrivici e ti rispondiamo entro 24 ore con una prima analisi del tuo progetto.</p>
 
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
@@ -373,9 +352,7 @@
             <textarea name="message" required rows="5" placeholder="Raccontaci il tuo progetto..."></textarea>
           </label>
 
-          <button type="submit" class="cta-pill submit">
-            <span>INVIA MESSAGGIO</span>
-          </button>
+          <button type="submit" class="cta-pill submit"><span>INVIA MESSAGGIO</span></button>
 
           <p class="form-message" id="formMessage"></p>
         </form>
@@ -389,7 +366,6 @@
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
