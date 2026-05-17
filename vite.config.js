@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
   build: {
@@ -8,8 +9,15 @@ export default defineConfig({
     sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        funzionalita: resolve(__dirname, 'funzionalita.html'),
+        prezzi: resolve(__dirname, 'prezzi.html'),
+        vetrina: resolve(__dirname, 'vetrina.html')
+      },
       output: {
         manualChunks: {
+          gsap: ['gsap'],
           lenis: ['lenis']
         }
       }

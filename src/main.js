@@ -1,181 +1,226 @@
 /**
- * TakeOff Milan — Main JS
- * - Lenis smooth scroll
- * - IntersectionObserver reveal-on-scroll
- * - Header scroll state
- * - Mobile menu toggle
- * - Contact form submit (Cloudflare Functions)
- * - Back to top button
- * - Footer year auto
+ * TakeOff — Main JS v0.2 (rebrand)
+ * Lenis smooth + GSAP ScrollTrigger + counter + calculator + FAQ
  */
 
 import Lenis from 'lenis'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// ===============================
-// SMOOTH SCROLL (Lenis)
-// ===============================
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-  smoothTouch: false,
-})
+gsap.registerPlugin(ScrollTrigger)
 
-function raf(time) {
-  lenis.raf(time)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+// ===== LENIS SMOOTH SCROLL =====
+let lenis
+if (!prefersReducedMotion) {
+  lenis = new Lenis({
+    duration: 1.15,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  })
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
   requestAnimationFrame(raf)
+  lenis.on('scroll', ScrollTrigger.update)
 }
-requestAnimationFrame(raf)
 
-// Anchor link smooth scroll integration
+// ===== Anchor smooth scroll =====
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (e) => {
-    const targetId = link.getAttribute('href')
-    if (targetId === '#' || targetId === '#top') {
+    const id = link.getAttribute('href')
+    if (id === '#' || id === '#top') {
       e.preventDefault()
-      lenis.scrollTo(0)
+      lenis ? lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
-    const target = document.querySelector(targetId)
+    const target = document.querySelector(id)
     if (target) {
       e.preventDefault()
-      lenis.scrollTo(target, { offset: -80 })
+      lenis ? lenis.scrollTo(target, { offset: -80 }) : target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   })
 })
 
-// ===============================
-// HEADER SCROLL STATE
-// ===============================
+// ===== HEADER SCROLL STATE =====
 const header = document.querySelector('[data-header]')
-const updateHeader = () => {
-  if (window.scrollY > 30) {
-    header?.classList.add('scrolled')
-  } else {
-    header?.classList.remove('scrolled')
-  }
+const onScroll = () => {
+  if (window.scrollY > 30) header?.classList.add('scrolled')
+  else header?.classList.remove('scrolled')
 }
-window.addEventListener('scroll', updateHeader, { passive: true })
-updateHeader()
+window.addEventListener('scroll', onScroll, { passive: true })
+onScroll()
 
-// ===============================
-// REVEAL ON SCROLL (IntersectionObserver)
-// ===============================
-const revealObserver = new IntersectionObserver(
+// ===== SCROLL PROGRESS BAR =====
+const progressEl = document.querySelector('[data-progress]')
+const updateProgress = () => {
+  if (!progressEl) return
+  const max = document.documentElement.scrollHeight - window.innerHeight
+  const pct = Math.min(100, (window.scrollY / max) * 100)
+  progressEl.style.width = pct + '%'
+}
+window.addEventListener('scroll', updateProgress, { passive: true })
+updateProgress()
+
+// ===== REVEAL (IntersectionObserver) =====
+const revealObs = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed', 'in')
-        revealObserver.unobserve(entry.target)
+        revealObs.unobserve(entry.target)
       }
     })
   },
-  {
-    threshold: 0.12,
-    rootMargin: '0px 0px -60px 0px',
-  }
+  { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
 )
+document.querySelectorAll('[data-reveal]').forEach((el) => revealObs.observe(el))
 
-document.querySelectorAll('[data-reveal]').forEach((el) => {
-  revealObserver.observe(el)
+// ===== HERO TITLE STAGGER (split by word) =====
+if (!prefersReducedMotion) {
+  const heroTitle = document.querySelector('[data-split]')
+  if (heroTitle) {
+    const html = heroTitle.innerHTML
+    // wrap words in spans (only for non-tag content)
+    const wrapped = html.replace(/(>|^)([^<]+)(<|$)/g, (m, p1, words, p3) => {
+      const out = words
+        .split(' ')
+        .map((w) => w ? `<span class="word">${w}</span>` : '')
+        .join(' ')
+      return `${p1}${out}${p3}`
+    })
+    heroTitle.innerHTML = wrapped
+    gsap.from('[data-split] .word', {
+      y: '110%',
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.05,
+      ease: 'power3.out',
+      delay: 0.2,
+    })
+    // ensure word elements have overflow:hidden parent visual
+    const style = document.createElement('style')
+    style.textContent = `.word { display: inline-block; }`
+    document.head.appendChild(style)
+  }
+}
+
+// ===== STICKY COUNTER (problem section) =====
+if (!prefersReducedMotion) {
+  gsap.utils.toArray('[data-counter-row]').forEach((row, i) => {
+    gsap.to(row, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: row,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
+    })
+  })
+}
+
+// ===== COUNTER ANIMATION ON SCROLL =====
+const animateCounter = (el, to) => {
+  const obj = { val: 0 }
+  gsap.to(obj, {
+    val: to,
+    duration: 2,
+    ease: 'power2.out',
+    onUpdate: () => {
+      const v = Math.round(obj.val)
+      el.textContent = v >= 1000 ? v.toLocaleString('it-IT') + '+' : v + (el.dataset.suffix || '')
+    },
+  })
+}
+
+document.querySelectorAll('[data-counter-to]').forEach((el) => {
+  const to = parseInt(el.dataset.counterTo, 10)
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(el, to)
+          io.unobserve(el)
+        }
+      })
+    },
+    { threshold: 0.5 }
+  )
+  io.observe(el)
 })
 
-// Services cards have separate class-based animation
-document.querySelectorAll('.svc-card').forEach((el) => {
-  revealObserver.observe(el)
+// ===== CALCULATOR =====
+const calcRev = document.querySelector('#calcRevenue')
+const calcYears = document.querySelector('#calcYears')
+const labelRev = document.querySelector('[data-calc-revenue]')
+const labelYears = document.querySelector('[data-calc-years]')
+const result = document.querySelector('[data-calc-result]')
+
+const formatEUR = (n) =>
+  '€' + Math.round(n).toLocaleString('it-IT')
+
+const updateCalculator = () => {
+  if (!calcRev || !calcYears || !result) return
+  const revenue = parseInt(calcRev.value, 10)
+  const years = parseInt(calcYears.value, 10)
+  // Costo Shopify Basic: 29€/mese + 2% commissioni + 50€/mese app medie
+  const shopifyMonthly = 29 + 50
+  const shopifyTransactionFees = revenue * 0.02
+  const yearlyShopify = shopifyMonthly * 12 + shopifyTransactionFees
+  const totalShopify = yearlyShopify * years
+  const totalTakeoff = 10 * years // dominio
+  const savings = totalShopify - totalTakeoff
+
+  labelRev.textContent = formatEUR(revenue)
+  labelYears.textContent = years + (years === 1 ? ' anno' : ' anni')
+  result.textContent = formatEUR(savings)
+}
+
+calcRev?.addEventListener('input', updateCalculator)
+calcYears?.addEventListener('input', updateCalculator)
+updateCalculator()
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('[data-faq]').forEach((item) => {
+  const q = item.querySelector('.faq-q')
+  q?.addEventListener('click', () => {
+    item.classList.toggle('open')
+  })
 })
 
-// ===============================
-// MOBILE MENU TOGGLE
-// ===============================
+// ===== MOBILE MENU =====
 const menuToggle = document.querySelector('[data-menu-toggle]')
-const mainNav = document.querySelector('.main-nav')
-
 menuToggle?.addEventListener('click', () => {
-  mainNav?.classList.toggle('open')
+  document.querySelector('.main-nav')?.classList.toggle('open')
   menuToggle.classList.toggle('open')
 })
 
-// ===============================
-// CONTACT FORM SUBMIT
-// ===============================
-const contactForm = document.querySelector('#contactForm')
-const formMessage = document.querySelector('#formMessage')
-
-contactForm?.addEventListener('submit', async (e) => {
-  e.preventDefault()
-
-  const formData = new FormData(contactForm)
-  const payload = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    service: formData.get('service'),
-    message: formData.get('message'),
-  }
-
-  if (formMessage) {
-    formMessage.textContent = 'Invio in corso...'
-    formMessage.style.color = ''
-  }
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-
-    const data = await response.json()
-
-    if (data.success) {
-      if (formMessage) {
-        formMessage.textContent = '✓ Messaggio inviato! Ti rispondiamo entro 24h.'
-        formMessage.style.color = '#52ff9f'
-      }
-      contactForm.reset()
-    } else {
-      if (formMessage) {
-        formMessage.textContent = data.error || 'Errore. Riprova.'
-        formMessage.style.color = '#ff6b6b'
-      }
-    }
-  } catch (err) {
-    if (formMessage) {
-      formMessage.textContent = 'Errore di connessione. Riprova.'
-      formMessage.style.color = '#ff6b6b'
-    }
-  }
+// ===== BACK TO TOP =====
+const backTop = document.querySelector('[data-back-to-top]')
+window.addEventListener(
+  'scroll',
+  () => {
+    if (window.scrollY > 600) backTop?.classList.add('visible')
+    else backTop?.classList.remove('visible')
+  },
+  { passive: true }
+)
+backTop?.addEventListener('click', () => {
+  lenis ? lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
-// ===============================
-// BACK TO TOP BUTTON
-// ===============================
-const backToTop = document.querySelector('[data-back-to-top]')
+// ===== FOOTER YEAR =====
+const year = document.querySelector('#year')
+if (year) year.textContent = new Date().getFullYear()
 
-const toggleBackToTop = () => {
-  if (window.scrollY > 600) {
-    backToTop?.classList.add('visible')
-  } else {
-    backToTop?.classList.remove('visible')
-  }
-}
-window.addEventListener('scroll', toggleBackToTop, { passive: true })
-
-backToTop?.addEventListener('click', () => {
-  lenis.scrollTo(0)
-})
-
-// ===============================
-// FOOTER YEAR
-// ===============================
-const yearEl = document.querySelector('#year')
-if (yearEl) yearEl.textContent = new Date().getFullYear()
-
-// ===============================
-// LOG STARTUP
-// ===============================
+// ===== STARTUP LOG =====
 console.log(
-  '%cTakeOff Milan%c — Performance-driven digital studio',
-  'font-weight:900;background:linear-gradient(120deg,#ff66c4,#ffde59);-webkit-background-clip:text;color:transparent;font-size:16px;',
-  'color:#666;font-size:12px;'
+  '%cTakeOff%c · Zero abbonamenti. Per sempre.',
+  'font-weight:700;background:linear-gradient(120deg,#ff66c4,#ffde59);-webkit-background-clip:text;color:transparent;font-size:14px;',
+  'color:#666;font-size:11px;'
 )
