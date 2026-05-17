@@ -31,7 +31,9 @@
   <!-- Fonts: Figtree (heading) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&family=Inter:wght@400;500;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="stylesheet" href="/src/style.css" />
 
@@ -98,7 +100,7 @@
   <header class="site-header" data-header>
     <div class="header-inner">
       <a href="#top" class="logo-link" aria-label="TakeOff Milan home">
-        <img src="/images/logo.png" alt="TakeOff Milan" class="logo-img" />
+        <img src="/images/logo.png" alt="TakeOff Milan" class="logo-img" width="140" height="36" fetchpriority="high" />
       </a>
 
       <nav class="main-nav" aria-label="Navigazione principale">
@@ -138,9 +140,9 @@
         </div>
 
         <div class="hero-mockups" data-reveal>
-          <img src="/images/portfolio/bimbo-felice.png" alt="Caso studio Bimbo Felice" loading="lazy" />
-          <img src="/images/portfolio/veda.png" alt="Caso studio VEDA" loading="lazy" />
-          <img src="/images/portfolio/barbiere-blocco.png" alt="Caso studio Il Barbiere del Blocco" loading="lazy" />
+          <img src="/images/portfolio/bimbo-felice.webp" alt="Caso studio Bimbo Felice" width="800" height="500" fetchpriority="high" />
+          <img src="/images/portfolio/veda.webp" alt="Caso studio VEDA" width="800" height="500" />
+          <img src="/images/portfolio/barbiere-blocco.webp" alt="Caso studio Il Barbiere del Blocco" width="800" height="500" />
         </div>
       </div>
     </section>
@@ -178,7 +180,7 @@
 
       <div class="cs-grid">
         <article class="cs-card" data-reveal>
-          <div class="cs-media"><img src="/images/portfolio/bimbo-felice.png" alt="Bimbo Felice" loading="lazy" /></div>
+          <div class="cs-media"><img src="/images/portfolio/bimbo-felice.webp" alt="Bimbo Felice" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">E-commerce · Integratori</p>
             <h3>Bimbo Felice</h3>
@@ -187,7 +189,7 @@
         </article>
 
         <article class="cs-card" data-reveal>
-          <div class="cs-media"><img src="/images/portfolio/veda.png" alt="VEDA Yachts" loading="lazy" /></div>
+          <div class="cs-media"><img src="/images/portfolio/veda.webp" alt="VEDA Yachts" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">Luxury · Nautica</p>
             <h3>VEDA Yachts</h3>
@@ -196,7 +198,7 @@
         </article>
 
         <article class="cs-card" data-reveal>
-          <div class="cs-media"><img src="/images/portfolio/barbiere-blocco.png" alt="Il Barbiere del Blocco" loading="lazy" /></div>
+          <div class="cs-media"><img src="/images/portfolio/barbiere-blocco.webp" alt="Il Barbiere del Blocco" loading="lazy" /></div>
           <div class="cs-body">
             <p class="cs-tag">Brand · Box mensile</p>
             <h3>Il Barbiere del Blocco</h3>
@@ -233,7 +235,7 @@
       <article class="svc-card from-right" data-reveal>
         <div class="svc-inner">
           <div class="svc-media"><div class="svc-mediaFrame">
-            <img src="/images/portfolio/veda.png" alt="Website Design" loading="lazy" />
+            <img src="/images/portfolio/veda.webp" alt="Website Design" loading="lazy" />
           </div></div>
           <div class="svc-content align-right">
             <h3 class="svc-title">Website Design &amp; Development</h3>
@@ -246,7 +248,7 @@
       <article class="svc-card from-left" data-reveal>
         <div class="svc-inner reverse">
           <div class="svc-media"><div class="svc-mediaFrame">
-            <img src="/images/portfolio/barbiere-blocco.png" alt="Video Editing" loading="lazy" />
+            <img src="/images/portfolio/barbiere-blocco.webp" alt="Video Editing" loading="lazy" />
           </div></div>
           <div class="svc-content align-left">
             <h3 class="svc-title">Video Editing &amp; Short-Form Content</h3>
@@ -259,7 +261,7 @@
       <article class="svc-card from-right" data-reveal>
         <div class="svc-inner">
           <div class="svc-media"><div class="svc-mediaFrame">
-            <img src="/images/portfolio/bimbo-felice.png" alt="SEO Strategy" loading="lazy" />
+            <img src="/images/portfolio/bimbo-felice.webp" alt="SEO Strategy" loading="lazy" />
           </div></div>
           <div class="svc-content align-right">
             <h3 class="svc-title">SEO Strategy &amp; Optimization</h3>
