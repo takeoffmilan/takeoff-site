@@ -92,7 +92,7 @@ if (heroEl) {
 const heroVideo = document.querySelector('[data-hero-video]')
 if (heroVideo && !prefersReducedMotion) {
   heroVideo.muted = true
-  heroVideo.loop = false
+  heroVideo.loop = true
 
   const fadeWindow = 0.5
   const renderVideoOpacity = () => {

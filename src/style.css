@@ -392,6 +392,9 @@ h1, h2, h3, h4, h5 {
 .hero-bg::after {
   content: none;
 }
+.hero-bg::before {
+  content: none;
+}
 
 .hero-video {
   position: absolute;
@@ -1410,10 +1413,31 @@ h1, h2, h3, h4, h5 {
   }
   .hero-bg {
     background:
-      radial-gradient(ellipse at 50% 28%, rgba(255, 158, 64, 0.52), transparent 26%),
-      radial-gradient(ellipse at 54% 54%, rgba(255, 102, 196, 0.28), transparent 36%),
-      radial-gradient(ellipse at 46% 70%, rgba(255, 222, 89, 0.16), transparent 28%),
       hsl(260 87% 3%);
+  }
+  .hero-bg::before,
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    pointer-events: none;
+  }
+  .hero-bg::before {
+    background:
+      radial-gradient(ellipse 58% 22% at 64% 28%, rgba(255, 210, 74, 0.95) 0 18%, rgba(194, 48, 34, 0.78) 33%, transparent 58%),
+      radial-gradient(ellipse 74% 18% at 42% 52%, rgba(255, 102, 196, 0.72) 0 12%, rgba(255, 136, 49, 0.82) 28%, transparent 56%),
+      radial-gradient(ellipse 62% 20% at 52% 74%, rgba(255, 222, 89, 0.72) 0 16%, rgba(129, 26, 24, 0.82) 34%, transparent 62%);
+    filter: contrast(1.15) saturate(1.22);
+    transform: rotate(-18deg) scale(1.18);
+    opacity: 0.9;
+  }
+  .hero-bg::after {
+    background:
+      radial-gradient(ellipse 18% 60% at 8% 52%, rgba(255, 102, 196, 0.86) 0 20%, rgba(125, 18, 20, 0.82) 44%, transparent 70%),
+      radial-gradient(ellipse 18% 70% at 92% 18%, rgba(255, 102, 196, 0.78) 0 18%, rgba(120, 22, 18, 0.82) 46%, transparent 72%),
+      linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    filter: contrast(1.1) saturate(1.16);
+    opacity: 0.78;
   }
   .hero-cursor-glow,
   .hero-flare,
@@ -1423,9 +1447,10 @@ h1, h2, h3, h4, h5 {
   }
   .hero-video video {
     object-position: 50% 44%;
-    filter: hue-rotate(118deg) saturate(1.55) contrast(1.12) brightness(calc(1.35 - (var(--hero-scroll) * 0.08)));
-    transform: scale(1.18);
-    opacity: 0.92 !important;
+    filter: hue-rotate(118deg) saturate(1.35) contrast(1.06) brightness(calc(1.08 - (var(--hero-scroll) * 0.08)));
+    transform: scale(1.12);
+    opacity: 0.72 !important;
+    mix-blend-mode: screen;
   }
   .hero-content {
     padding-top: 0;
