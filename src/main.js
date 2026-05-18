@@ -10,17 +10,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-const heroEl = document.querySelector('.hero')
-
-if (heroEl && !prefersReducedMotion) {
-  heroEl.addEventListener('pointermove', (event) => {
-    const rect = heroEl.getBoundingClientRect()
-    const x = ((event.clientX - rect.left) / rect.width) * 100
-    const y = ((event.clientY - rect.top) / rect.height) * 100
-    heroEl.style.setProperty('--mx', x.toFixed(2) + '%')
-    heroEl.style.setProperty('--my', y.toFixed(2) + '%')
-  })
-}
 
 // ===== HERO VIDEO FADE LOOP =====
 const heroVideo = document.querySelector('[data-hero-video]')
@@ -149,17 +138,17 @@ if (!prefersReducedMotion) {
       duration: 1.15,
       ease: 'expo.out',
       delay: 0.18,
+      onComplete: () => gsap.set('.hero-title', { clearProps: 'transform,filter' }),
     })
     gsap.from('[data-split] .word', {
-      y: '120%',
-      rotateX: -38,
-      scale: 0.88,
+      y: 24,
       opacity: 0,
-      filter: 'blur(18px)',
-      duration: 1.35,
-      stagger: 0.045,
+      filter: 'blur(14px)',
+      duration: 1.05,
+      stagger: 0.04,
       ease: 'expo.out',
       delay: 0.34,
+      onComplete: () => gsap.set('[data-split] .word', { clearProps: 'transform,filter' }),
     })
     // ensure word elements have overflow:hidden parent visual
     const style = document.createElement('style')
@@ -185,14 +174,13 @@ if (!prefersReducedMotion) {
   })
 
   gsap.from('.hero-actions .btn', {
-    y: 34,
     opacity: 0,
     filter: 'blur(12px)',
-    duration: 1,
+    duration: 0.8,
     stagger: 0.1,
-    ease: 'elastic.out(1, 0.75)',
+    ease: 'power3.out',
     delay: 1.02,
-    onComplete: () => gsap.set('.hero-actions .btn', { clearProps: 'transform,filter' }),
+    onComplete: () => gsap.set('.hero-actions .btn', { clearProps: 'filter' }),
   })
 
   gsap.from('.logo-track span', {
@@ -204,28 +192,6 @@ if (!prefersReducedMotion) {
     stagger: 0.045,
     ease: 'power3.out',
     delay: 1.24,
-  })
-
-  document.querySelectorAll('.hero-actions .btn').forEach((button) => {
-    button.addEventListener('pointermove', (event) => {
-      const rect = button.getBoundingClientRect()
-      const x = event.clientX - rect.left - rect.width / 2
-      const y = event.clientY - rect.top - rect.height / 2
-      gsap.to(button, {
-        x: x * 0.12,
-        y: y * 0.18 - 4,
-        duration: 0.35,
-        ease: 'power3.out',
-      })
-    })
-    button.addEventListener('pointerleave', () => {
-      gsap.to(button, {
-        x: 0,
-        y: 0,
-        duration: 0.55,
-        ease: 'elastic.out(1, 0.55)',
-      })
-    })
   })
 }
 
