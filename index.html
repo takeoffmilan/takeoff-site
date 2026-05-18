@@ -90,103 +90,38 @@
 
 <main id="top">
 
-<!-- ========== S1. SCROLL HERO (Liquid Morph) ========== -->
-<section class="scroll-hero" data-scroll-hero aria-label="Hero">
-  <div class="sh-track">
-    <div class="sh-sticky">
-      <div class="sh-bg" aria-hidden="true"></div>
-      <div class="sh-blob sh-blob-1" aria-hidden="true"></div>
-      <div class="sh-blob sh-blob-2" aria-hidden="true"></div>
-      <div class="sh-blob sh-blob-3" aria-hidden="true"></div>
+<!-- ========== S1. HERO ========== -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-blob pink" aria-hidden="true"></div>
+  <div class="hero-blob yellow" aria-hidden="true"></div>
 
-      <div class="sh-stage" aria-hidden="true">
-        <svg class="sh-svg" viewBox="-200 -200 400 400" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gradPinkYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ff66c4"/>
-              <stop offset="50%" stop-color="#ffb347"/>
-              <stop offset="100%" stop-color="#ffde59"/>
-            </linearGradient>
-            <linearGradient id="gradPinkOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ff66c4"/>
-              <stop offset="100%" stop-color="#ffb347"/>
-            </linearGradient>
-            <filter id="liquidBlur">
-              <feGaussianBlur stdDeviation="1"/>
-            </filter>
-          </defs>
+  <div class="hero-content">
+    <span class="hero-kicker">Il CMS senza abbonamenti</span>
 
-          <g class="sh-shape sh-shape-coin">
-            <circle r="90" fill="url(#gradPinkYellow)" filter="url(#liquidBlur)"/>
-            <circle r="78" fill="none" stroke="#fff" stroke-width="2" stroke-opacity="0.4"/>
-            <text y="22" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="90" fill="#fff" opacity="0.9">€</text>
-          </g>
+    <h1 class="hero-title" data-split>
+      Costruisci il tuo sito.<br />
+      <span class="grad-move">Possiedilo per sempre.</span>
+    </h1>
 
-          <g class="sh-shape sh-shape-card">
-            <rect x="-130" y="-80" width="260" height="160" rx="20" fill="url(#gradPinkYellow)"/>
-            <rect x="-110" y="-20" width="80" height="14" rx="3" fill="#fff" opacity="0.35"/>
-            <rect x="-110" y="5" width="120" height="8" rx="2" fill="#fff" opacity="0.25"/>
-            <rect x="-110" y="20" width="100" height="8" rx="2" fill="#fff" opacity="0.25"/>
-            <rect x="60" y="40" width="50" height="30" rx="4" fill="#fff" opacity="0.6"/>
-          </g>
+    <p class="hero-sub">
+      TakeOff ti dà tutto quello che serve per vendere online.
+      Senza canoni mensili. Senza commissioni. Senza limiti.
+    </p>
 
-          <g class="sh-shape sh-shape-laptop">
-            <rect x="-150" y="-90" width="300" height="180" rx="14" fill="#0a0a0f"/>
-            <rect x="-140" y="-80" width="280" height="160" rx="6" fill="url(#gradPinkYellow)"/>
-            <rect x="-130" y="-70" width="80" height="6" rx="2" fill="#fff" opacity="0.7"/>
-            <rect x="-130" y="-55" width="60" height="4" rx="1" fill="#fff" opacity="0.5"/>
-            <rect x="-130" y="-40" width="100" height="40" rx="4" fill="#fff" opacity="0.3"/>
-            <rect x="-20" y="-40" width="100" height="40" rx="4" fill="#fff" opacity="0.4"/>
-            <rect x="-130" y="10" width="220" height="20" rx="3" fill="#fff" opacity="0.2"/>
-            <rect x="-130" y="40" width="160" height="14" rx="3" fill="#fff" opacity="0.25"/>
-            <rect x="-170" y="92" width="340" height="14" rx="3" fill="#1c1c28"/>
-          </g>
-
-          <g class="sh-shape sh-shape-logo">
-            <text x="-130" y="20" font-family="Space Grotesk" font-weight="700" font-size="92" fill="#0F172A">Take</text>
-            <ellipse cx="60" cy="-8" rx="46" ry="56" fill="none" stroke="url(#gradPinkOrange)" stroke-width="20" transform="rotate(-15 60 -8)"/>
-            <text x="100" y="20" font-family="Space Grotesk" font-weight="700" font-size="92" fill="#0F172A">ff</text>
-          </g>
-        </svg>
-      </div>
-
-      <div class="sh-content">
-        <span class="hero-kicker">Il CMS senza abbonamenti</span>
-
-        <h1 class="hero-title">
-          Costruisci il tuo sito.<br />
-          <span class="grad-move">Possiedilo per sempre.</span>
-        </h1>
-
-        <p class="hero-sub">
-          TakeOff ti dà tutto quello che serve per vendere online.
-          Senza canoni mensili. Senza commissioni. Senza limiti.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#cta" class="btn btn-primary btn-arrow"><span>Inizia gratis</span></a>
-          <a href="/prezzi" class="btn btn-ghost">Vedi i prezzi</a>
-        </div>
-
-        <div class="hero-badges">
-          <span class="hero-badge">🇮🇹 Made in Italy</span>
-          <span class="hero-badge">⚡ Cloudflare powered</span>
-          <span class="hero-badge"><span class="mono neon">€0</span>/mese, sempre</span>
-        </div>
-      </div>
-
-      <div class="sh-progress" aria-hidden="true">
-        <div class="sh-progress-bar"></div>
-        <span class="sh-progress-label sh-l-1">Costoso</span>
-        <span class="sh-progress-label sh-l-2">Inutile</span>
-        <span class="sh-progress-label sh-l-3">Vecchio</span>
-        <span class="sh-progress-label sh-l-4">TakeOff</span>
-      </div>
+    <div class="hero-actions">
+      <a href="#cta" class="btn btn-primary btn-arrow"><span>Inizia gratis</span></a>
+      <a href="/prezzi" class="btn btn-ghost">Vedi i prezzi</a>
     </div>
-  </div>
 
-  <div class="sh-after-trust">
+    <div class="hero-badges">
+      <span class="hero-badge">🇮🇹 Made in Italy</span>
+      <span class="hero-badge">⚡ Cloudflare powered</span>
+      <span class="hero-badge"><span class="mono neon">€0</span>/mese, sempre</span>
+    </div>
+
     <p class="hero-trust">Già scelto da 1.200+ aziende</p>
+
     <div class="logo-marquee" aria-hidden="true">
       <div class="logo-track">
         <span>Bimbo Felice</span><span>VEDA Yachts</span><span>Il Barbiere del Blocco</span>
