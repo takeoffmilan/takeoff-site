@@ -10,6 +10,79 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const heroEl = document.querySelector('.hero')
+
+// ===== HERO INTERACTION (vanilla, CSS variables) =====
+if (heroEl) {
+  if (prefersReducedMotion) {
+    heroEl.classList.add('is-loaded')
+  } else {
+    const finePointer = window.matchMedia('(pointer: fine)').matches
+    const state = {
+      videoX: 0,
+      videoY: 0,
+      targetVideoX: 0,
+      targetVideoY: 0,
+      glowX: 50,
+      glowY: 42,
+      targetGlowX: 50,
+      targetGlowY: 42,
+      scroll: 0,
+      targetScroll: 0,
+    }
+
+    requestAnimationFrame(() => heroEl.classList.add('is-loaded'))
+
+    if (finePointer) {
+      heroEl.addEventListener('pointermove', (event) => {
+        const rect = heroEl.getBoundingClientRect()
+        const nx = (event.clientX - rect.left) / rect.width - 0.5
+        const ny = (event.clientY - rect.top) / rect.height - 0.5
+        state.targetVideoX = -nx * 18
+        state.targetVideoY = -ny * 14
+        state.targetGlowX = (nx + 0.5) * 100
+        state.targetGlowY = (ny + 0.5) * 100
+      })
+    }
+
+    document.querySelectorAll('[data-hero-cta]').forEach((button) => {
+      button.addEventListener('pointermove', (event) => {
+        const rect = button.getBoundingClientRect()
+        button.style.setProperty('--cta-x', (((event.clientX - rect.left) / rect.width) * 100).toFixed(2) + '%')
+        button.style.setProperty('--cta-y', (((event.clientY - rect.top) / rect.height) * 100).toFixed(2) + '%')
+      })
+      button.addEventListener('pointerleave', () => {
+        button.style.setProperty('--cta-x', '50%')
+        button.style.setProperty('--cta-y', '50%')
+      })
+    })
+
+    const updateHeroScroll = () => {
+      const rect = heroEl.getBoundingClientRect()
+      state.targetScroll = Math.min(1, Math.max(0, -rect.top / Math.max(1, rect.height * 0.82)))
+    }
+
+    const animateHero = () => {
+      state.videoX += (state.targetVideoX - state.videoX) * 0.08
+      state.videoY += (state.targetVideoY - state.videoY) * 0.08
+      state.glowX += (state.targetGlowX - state.glowX) * 0.07
+      state.glowY += (state.targetGlowY - state.glowY) * 0.07
+      state.scroll += (state.targetScroll - state.scroll) * 0.12
+
+      heroEl.style.setProperty('--hero-video-x', state.videoX.toFixed(2) + 'px')
+      heroEl.style.setProperty('--hero-video-y', state.videoY.toFixed(2) + 'px')
+      heroEl.style.setProperty('--cursor-x', state.glowX.toFixed(2) + '%')
+      heroEl.style.setProperty('--cursor-y', state.glowY.toFixed(2) + '%')
+      heroEl.style.setProperty('--hero-scroll', state.scroll.toFixed(3))
+      requestAnimationFrame(animateHero)
+    }
+
+    window.addEventListener('scroll', updateHeroScroll, { passive: true })
+    window.addEventListener('resize', updateHeroScroll)
+    updateHeroScroll()
+    animateHero()
+  }
+}
 
 // ===== HERO VIDEO FADE LOOP =====
 const heroVideo = document.querySelector('[data-hero-video]')
@@ -116,46 +189,8 @@ const revealObs = new IntersectionObserver(
 )
 document.querySelectorAll('[data-reveal]').forEach((el) => revealObs.observe(el))
 
-// ===== HERO TITLE STAGGER (split by word) =====
+// ===== HERO ENTRANCE =====
 if (!prefersReducedMotion) {
-  const heroTitle = document.querySelector('[data-split]')
-  if (heroTitle) {
-    const html = heroTitle.innerHTML
-    // wrap words in spans (only for non-tag content)
-    const wrapped = html.replace(/(>|^)([^<]+)(<|$)/g, (m, p1, words, p3) => {
-      const out = words
-        .split(' ')
-        .map((w) => w ? `<span class="word">${w}</span>` : '')
-        .join(' ')
-      return `${p1}${out}${p3}`
-    })
-    heroTitle.innerHTML = wrapped
-    gsap.set('.hero-title', { transformPerspective: 900 })
-    gsap.from('.hero-title', {
-      scale: 0.92,
-      opacity: 0,
-      filter: 'blur(22px)',
-      duration: 1.15,
-      ease: 'expo.out',
-      delay: 0.18,
-      onComplete: () => gsap.set('.hero-title', { clearProps: 'transform,filter' }),
-    })
-    gsap.from('[data-split] .word', {
-      y: 24,
-      opacity: 0,
-      filter: 'blur(14px)',
-      duration: 1.05,
-      stagger: 0.04,
-      ease: 'expo.out',
-      delay: 0.34,
-      onComplete: () => gsap.set('[data-split] .word', { clearProps: 'transform,filter' }),
-    })
-    // ensure word elements have overflow:hidden parent visual
-    const style = document.createElement('style')
-    style.textContent = `.word { display: inline-block; }`
-    document.head.appendChild(style)
-  }
-
   gsap.from('.site-header', {
     y: -24,
     opacity: 0,
@@ -197,42 +232,6 @@ if (!prefersReducedMotion) {
 
 // ===== SCROLL MOTION =====
 if (!prefersReducedMotion) {
-  gsap.to('.hero-content', {
-    y: -70,
-    opacity: 0.28,
-    filter: 'blur(8px)',
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true,
-    },
-  })
-
-  gsap.to('.hero-video video', {
-    scale: 1.08,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true,
-    },
-  })
-
-  gsap.to('.hero-marquee-wrap', {
-    y: 34,
-    opacity: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: '35% top',
-      end: 'bottom top',
-      scrub: true,
-    },
-  })
-
   gsap.utils.toArray('main > section:not(.hero)').forEach((section) => {
     const introEls = section.querySelectorAll('.eyebrow, .section-title, .section-lead')
     if (introEls.length) {
