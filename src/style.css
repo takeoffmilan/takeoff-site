@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  padding: 116px 24px 54px;
+  padding: 104px 24px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,14 +411,14 @@ h1, h2, h3, h4, h5 {
   top: 50%;
   left: 50%;
   z-index: -2;
-  width: min(984px, 88vw);
-  height: min(527px, 52vh);
+  width: min(860px, 78vw);
+  height: min(420px, 42vh);
   transform: translate(-50%, -50%) scaleX(calc(1 - (var(--hero-scroll) * 0.22))) scaleY(calc(1 + (var(--hero-scroll) * 0.3))) translateY(calc(var(--hero-scroll) * 56px));
   border-radius: 50%;
   background:
     radial-gradient(ellipse at 45% 42%, rgba(255,102,196,0.22), transparent 34%),
     radial-gradient(ellipse at 60% 54%, rgba(255,222,89,0.16), transparent 38%),
-    rgba(3, 3, 6, 0.88);
+    transparent;
   filter: blur(82px);
   opacity: 0.9;
   pointer-events: none;
@@ -430,9 +430,9 @@ h1, h2, h3, h4, h5 {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 48% 38%, rgba(255, 102, 196, 0.2), transparent 25%),
-    radial-gradient(ellipse at 58% 46%, rgba(255, 174, 76, 0.16), transparent 22%),
-    radial-gradient(ellipse at 52% 58%, rgba(255, 222, 89, 0.14), transparent 24%);
+    radial-gradient(ellipse at 48% 36%, rgba(255, 102, 196, 0.14), transparent 18%),
+    radial-gradient(ellipse at 58% 44%, rgba(255, 174, 76, 0.12), transparent 17%),
+    radial-gradient(ellipse at 52% 54%, rgba(255, 222, 89, 0.1), transparent 18%);
   mix-blend-mode: screen;
   opacity: 0.72;
   filter: blur(16px);
@@ -681,7 +681,7 @@ h1, h2, h3, h4, h5 {
   z-index: 1;
   width: min(100%, 1120px);
   display: block;
-  margin: 86px auto 0;
+  margin: 38px auto 0;
   padding: 14px 18px;
   border-radius: var(--radius-pill);
   background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.035));
@@ -1396,7 +1396,7 @@ h1, h2, h3, h4, h5 {
   .main-nav, .header-cta { display: none; }
   .menu-toggle { display: flex; }
   .hero {
-    padding: 94px 22px 30px;
+    padding: 90px 22px 40px;
     min-height: 100svh;
   }
   .hero::after {
@@ -1438,7 +1438,7 @@ h1, h2, h3, h4, h5 {
   .hero-marquee-wrap {
     display: block;
     width: 100%;
-    margin-top: 58px;
+    margin-top: 34px;
     padding: 10px 12px;
     border-radius: 24px;
   }
