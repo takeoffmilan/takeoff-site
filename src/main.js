@@ -10,6 +10,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const heroEl = document.querySelector('.hero')
+
+if (heroEl && !prefersReducedMotion) {
+  heroEl.addEventListener('pointermove', (event) => {
+    const rect = heroEl.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width) * 100
+    const y = ((event.clientY - rect.top) / rect.height) * 100
+    heroEl.style.setProperty('--mx', x.toFixed(2) + '%')
+    heroEl.style.setProperty('--my', y.toFixed(2) + '%')
+  })
+}
 
 // ===== HERO VIDEO FADE LOOP =====
 const heroVideo = document.querySelector('[data-hero-video]')
@@ -130,14 +141,25 @@ if (!prefersReducedMotion) {
       return `${p1}${out}${p3}`
     })
     heroTitle.innerHTML = wrapped
-    gsap.from('[data-split] .word', {
-      y: '80%',
+    gsap.set('.hero-title', { transformPerspective: 900 })
+    gsap.from('.hero-title', {
+      scale: 0.92,
       opacity: 0,
-      filter: 'blur(14px)',
-      duration: 1.2,
-      stagger: 0.06,
-      ease: 'power4.out',
-      delay: 0.28,
+      filter: 'blur(22px)',
+      duration: 1.15,
+      ease: 'expo.out',
+      delay: 0.18,
+    })
+    gsap.from('[data-split] .word', {
+      y: '120%',
+      rotateX: -38,
+      scale: 0.88,
+      opacity: 0,
+      filter: 'blur(18px)',
+      duration: 1.35,
+      stagger: 0.045,
+      ease: 'expo.out',
+      delay: 0.34,
     })
     // ensure word elements have overflow:hidden parent visual
     const style = document.createElement('style')
@@ -163,21 +185,47 @@ if (!prefersReducedMotion) {
   })
 
   gsap.from('.hero-actions .btn', {
-    y: 22,
+    y: 34,
     opacity: 0,
-    filter: 'blur(8px)',
-    duration: 0.9,
-    stagger: 0.08,
-    ease: 'power3.out',
-    delay: 0.95,
+    filter: 'blur(12px)',
+    duration: 1,
+    stagger: 0.1,
+    ease: 'elastic.out(1, 0.75)',
+    delay: 1.02,
+    onComplete: () => gsap.set('.hero-actions .btn', { clearProps: 'transform,filter' }),
   })
 
-  gsap.from('.hero-marquee-wrap', {
+  gsap.from('.logo-track span', {
     y: 28,
     opacity: 0,
-    duration: 1,
+    scale: 0.86,
+    filter: 'blur(8px)',
+    duration: 0.85,
+    stagger: 0.045,
     ease: 'power3.out',
-    delay: 1.18,
+    delay: 1.24,
+  })
+
+  document.querySelectorAll('.hero-actions .btn').forEach((button) => {
+    button.addEventListener('pointermove', (event) => {
+      const rect = button.getBoundingClientRect()
+      const x = event.clientX - rect.left - rect.width / 2
+      const y = event.clientY - rect.top - rect.height / 2
+      gsap.to(button, {
+        x: x * 0.12,
+        y: y * 0.18 - 4,
+        duration: 0.35,
+        ease: 'power3.out',
+      })
+    })
+    button.addEventListener('pointerleave', () => {
+      gsap.to(button, {
+        x: 0,
+        y: 0,
+        duration: 0.55,
+        ease: 'elastic.out(1, 0.55)',
+      })
+    })
   })
 }
 

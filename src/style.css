@@ -48,6 +48,7 @@
 
   /* ===== Typography (Tech Startup pair: Space Grotesk + DM Sans) ===== */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-hero: 'Bricolage Grotesque', 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
 
@@ -349,6 +350,8 @@ h1, h2, h3, h4, h5 {
   overflow: visible;
   isolation: isolate;
   background: hsl(260 87% 3%);
+  --mx: 50%;
+  --my: 42%;
 }
 .hero-bg {
   position: absolute;
@@ -389,6 +392,23 @@ h1, h2, h3, h4, h5 {
   opacity: 0.9;
   pointer-events: none;
 }
+.hero-flare {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(255, 102, 196, 0.24), transparent 18%),
+    radial-gradient(circle at calc(var(--mx) + 8%) calc(var(--my) + 6%), rgba(255, 222, 89, 0.2), transparent 16%);
+  mix-blend-mode: screen;
+  opacity: 0.72;
+  filter: blur(16px);
+  animation: heroFlarePulse 5.8s ease-in-out infinite;
+}
+@keyframes heroFlarePulse {
+  0%, 100% { opacity: 0.46; transform: scale(1); }
+  50% { opacity: 0.82; transform: scale(1.04); }
+}
 
 .hero-content {
   position: relative;
@@ -401,20 +421,27 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-title {
-  font-size: clamp(68px, 8.2vw, 138px);
-  font-weight: 500;
+  font-family: var(--font-hero);
+  font-size: clamp(76px, 9vw, 154px);
+  font-weight: 800;
   letter-spacing: 0;
-  line-height: 0.94;
+  line-height: 0.78;
   margin: 0;
   color: hsl(40 6% 95%);
-  text-shadow: 0 20px 80px rgba(0,0,0,0.45);
+  text-shadow:
+    0 2px 0 rgba(255,255,255,0.08),
+    0 22px 90px rgba(0,0,0,0.6),
+    0 0 42px rgba(255,102,196,0.12);
+  transform: translateZ(0);
+  animation: heroTitleBreath 6s ease-in-out infinite;
 }
 .hero-title .grad-move {
   display: inline-block;
-  font-size: 0.72em;
-  font-weight: 600;
+  font-size: 0.76em;
+  font-weight: 800;
   letter-spacing: 0;
-  margin-top: 0.1em;
+  margin-top: -0.02em;
+  filter: drop-shadow(0 18px 42px rgba(255,102,196,0.28));
 }
 
 .hero-sub {
@@ -431,10 +458,78 @@ h1, h2, h3, h4, h5 {
 
 .hero-actions {
   display: flex;
-  gap: 24px;
+  gap: 18px;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 44px;
+}
+.hero-actions .btn {
+  min-height: 70px;
+  padding: 0 34px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: hsl(40 6% 95%);
+  background: rgba(255,255,255,0.055);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.22),
+    inset 0 -18px 34px rgba(255,255,255,0.035),
+    0 24px 60px rgba(0,0,0,0.36);
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-actions .btn::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.22) 16%, transparent 32%),
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.24), transparent 35%);
+  opacity: 0;
+  transform: translateX(-32%);
+  transition: opacity 0.35s var(--ease-out), transform 0.5s var(--ease-out);
+  z-index: -1;
+}
+.hero-actions .btn:hover::before {
+  opacity: 1;
+  transform: translateX(18%);
+}
+.hero-actions .btn:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.28),
+    inset 0 -18px 34px rgba(255,255,255,0.05),
+    0 30px 72px rgba(0,0,0,0.44);
+}
+.hero-actions .btn-primary {
+  background:
+    linear-gradient(135deg, rgba(255,102,196,0.42), rgba(255,222,89,0.36)),
+    rgba(255,255,255,0.06);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.32),
+    inset 0 -20px 38px rgba(255,255,255,0.055),
+    0 18px 46px rgba(255,102,196,0.2),
+    0 28px 72px rgba(0,0,0,0.42);
+  animation: glassPulse 3.8s ease-in-out infinite;
+}
+.hero-actions .btn-ghost {
+  border-radius: var(--radius-pill);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025)),
+    rgba(255,255,255,0.035);
+}
+.hero-actions .btn-ghost:hover { border-color: rgba(255,255,255,0.3); }
+@keyframes glassPulse {
+  0%, 100% { box-shadow: inset 0 1px 1px rgba(255,255,255,0.32), inset 0 -20px 38px rgba(255,255,255,0.055), 0 18px 46px rgba(255,102,196,0.2), 0 28px 72px rgba(0,0,0,0.42); }
+  50% { box-shadow: inset 0 1px 1px rgba(255,255,255,0.38), inset 0 -20px 38px rgba(255,255,255,0.075), 0 24px 58px rgba(255,222,89,0.22), 0 34px 82px rgba(0,0,0,0.48); }
+}
+@keyframes heroTitleBreath {
+  0%, 100% { text-shadow: 0 2px 0 rgba(255,255,255,0.08), 0 22px 90px rgba(0,0,0,0.6), 0 0 42px rgba(255,102,196,0.12); }
+  50% { text-shadow: 0 2px 0 rgba(255,255,255,0.12), 0 26px 100px rgba(0,0,0,0.68), 0 0 58px rgba(255,222,89,0.16); }
 }
 
 .hero-trust {
@@ -1123,10 +1218,10 @@ h1, h2, h3, h4, h5 {
     min-height: 100svh;
   }
   .hero-title {
-    font-size: clamp(56px, 17vw, 86px);
-    line-height: 0.98;
+    font-size: clamp(64px, 18vw, 92px);
+    line-height: 0.84;
   }
-  .hero-title .grad-move { font-size: 0.78em; }
+  .hero-title .grad-move { font-size: 0.82em; }
   .hero-sub {
     font-size: 17px;
     line-height: 1.55;
@@ -1139,6 +1234,7 @@ h1, h2, h3, h4, h5 {
   .hero-actions .btn {
     width: 100%;
     max-width: 320px;
+    min-height: 62px;
   }
   .hero-marquee-wrap {
     display: block;
