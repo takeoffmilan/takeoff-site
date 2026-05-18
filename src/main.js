@@ -131,18 +131,129 @@ if (!prefersReducedMotion) {
     })
     heroTitle.innerHTML = wrapped
     gsap.from('[data-split] .word', {
-      y: '110%',
+      y: '80%',
       opacity: 0,
-      duration: 0.9,
-      stagger: 0.05,
-      ease: 'power3.out',
-      delay: 0.2,
+      filter: 'blur(14px)',
+      duration: 1.2,
+      stagger: 0.06,
+      ease: 'power4.out',
+      delay: 0.28,
     })
     // ensure word elements have overflow:hidden parent visual
     const style = document.createElement('style')
     style.textContent = `.word { display: inline-block; }`
     document.head.appendChild(style)
   }
+
+  gsap.from('.site-header', {
+    y: -24,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    delay: 0.1,
+  })
+
+  gsap.from('.hero-sub', {
+    y: 24,
+    opacity: 0,
+    filter: 'blur(10px)',
+    duration: 1,
+    ease: 'power3.out',
+    delay: 0.72,
+  })
+
+  gsap.from('.hero-actions .btn', {
+    y: 22,
+    opacity: 0,
+    filter: 'blur(8px)',
+    duration: 0.9,
+    stagger: 0.08,
+    ease: 'power3.out',
+    delay: 0.95,
+  })
+
+  gsap.from('.hero-marquee-wrap', {
+    y: 28,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out',
+    delay: 1.18,
+  })
+}
+
+// ===== SCROLL MOTION =====
+if (!prefersReducedMotion) {
+  gsap.to('.hero-content', {
+    y: -70,
+    opacity: 0.28,
+    filter: 'blur(8px)',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+
+  gsap.to('.hero-video video', {
+    scale: 1.08,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+
+  gsap.to('.hero-marquee-wrap', {
+    y: 34,
+    opacity: 0,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: '35% top',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+
+  gsap.utils.toArray('main > section:not(.hero)').forEach((section) => {
+    const introEls = section.querySelectorAll('.eyebrow, .section-title, .section-lead')
+    if (introEls.length) {
+      gsap.from(introEls, {
+        y: 34,
+        opacity: 0,
+        filter: 'blur(10px)',
+        duration: 0.9,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 74%',
+          once: true,
+        },
+      })
+    }
+  })
+
+  gsap.utils.toArray('.solution-card, .feature-card, .step-card, .testi, .app-card, .comp-table, .calc-box, .proof-numbers > div').forEach((el, index) => {
+    gsap.from(el, {
+      y: 42,
+      opacity: 0,
+      scale: 0.98,
+      filter: 'blur(10px)',
+      duration: 0.85,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 86%',
+        once: true,
+      },
+      delay: (index % 3) * 0.03,
+    })
+  })
 }
 
 // ===== STICKY COUNTER (problem section) =====
