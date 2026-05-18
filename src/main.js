@@ -11,6 +11,44 @@ gsap.registerPlugin(ScrollTrigger)
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+// ===== HERO VIDEO FADE LOOP =====
+const heroVideo = document.querySelector('[data-hero-video]')
+if (heroVideo && !prefersReducedMotion) {
+  heroVideo.muted = true
+  heroVideo.loop = false
+
+  const fadeWindow = 0.5
+  const renderVideoOpacity = () => {
+    const duration = Number.isFinite(heroVideo.duration) ? heroVideo.duration : 0
+    let opacity = 1
+
+    if (heroVideo.currentTime < fadeWindow) {
+      opacity = heroVideo.currentTime / fadeWindow
+    } else if (duration && duration - heroVideo.currentTime < fadeWindow) {
+      opacity = Math.max(0, (duration - heroVideo.currentTime) / fadeWindow)
+    }
+
+    heroVideo.style.opacity = opacity.toFixed(3)
+    if (!heroVideo.paused && !heroVideo.ended) requestAnimationFrame(renderVideoOpacity)
+  }
+
+  const playHeroVideo = () => {
+    heroVideo.currentTime = 0
+    heroVideo.style.opacity = '0'
+    heroVideo.play().then(() => requestAnimationFrame(renderVideoOpacity)).catch(() => {})
+  }
+
+  heroVideo.addEventListener('ended', () => {
+    heroVideo.style.opacity = '0'
+    window.setTimeout(playHeroVideo, 100)
+  })
+
+  if (heroVideo.readyState >= 2) playHeroVideo()
+  else heroVideo.addEventListener('canplay', playHeroVideo, { once: true })
+} else if (heroVideo) {
+  heroVideo.style.opacity = '1'
+}
+
 // ===== LENIS SMOOTH SCROLL =====
 let lenis
 if (!prefersReducedMotion) {
