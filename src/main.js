@@ -224,3 +224,59 @@ console.log(
   'font-weight:700;background:linear-gradient(120deg,#ff66c4,#ffde59);-webkit-background-clip:text;color:transparent;font-size:14px;',
   'color:#666;font-size:11px;'
 )
+
+// ===============================
+// SCROLL HERO — Liquid Morph progress
+// ===============================
+const scrollHero = document.querySelector('[data-scroll-hero]')
+if (scrollHero && !prefersReducedMotion) {
+  const track = scrollHero.querySelector('.sh-track')
+  const labels = scrollHero.querySelectorAll('.sh-progress-label')
+
+  // smoothed progress
+  let target = 0
+  let current = 0
+  const LERP = 0.18
+
+  const updateProgress = () => {
+    const rect = track.getBoundingClientRect()
+    const total = rect.height - window.innerHeight
+    const scrolled = -rect.top
+    target = Math.max(0, Math.min(1, scrolled / total))
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true })
+  window.addEventListener('resize', updateProgress)
+  updateProgress()
+
+  // each stage occupies 0.25 of progress
+  const stageProgress = (p, stageIdx) => {
+    // stageIdx 0..3, returns 0..1 within that quarter (with fade overlap)
+    const start = stageIdx * 0.25
+    const end = start + 0.25
+    if (p < start - 0.05) return 0
+    if (p > end + 0.05) return stageIdx === 3 ? 1 : 0
+    if (p < start) return (p - (start - 0.05)) / 0.05 // fade in
+    if (p > end) return 1 - (p - end) / 0.05 // fade out (unless last)
+    return 1
+  }
+
+  const tick = () => {
+    current += (target - current) * LERP
+    const p = current
+
+    scrollHero.style.setProperty('--p', p.toFixed(3))
+    scrollHero.style.setProperty('--stage1', stageProgress(p, 0).toFixed(3))
+    scrollHero.style.setProperty('--stage2', stageProgress(p, 1).toFixed(3))
+    scrollHero.style.setProperty('--stage3', stageProgress(p, 2).toFixed(3))
+    // stage 4 (logo) stays visible to the end
+    const s4 = p < 0.7 ? 0 : Math.min(1, (p - 0.7) / 0.25)
+    scrollHero.style.setProperty('--stage4', s4.toFixed(3))
+
+    // active label
+    const activeIdx = Math.min(3, Math.floor(p * 4))
+    labels.forEach((l, i) => l.classList.toggle('active', i === activeIdx))
+
+    requestAnimationFrame(tick)
+  }
+  requestAnimationFrame(tick)
+}
