@@ -29,6 +29,7 @@ if (heroEl) {
       targetGlowY: 42,
       scroll: 0,
       targetScroll: 0,
+      active: true,
     }
 
     requestAnimationFrame(() => heroEl.classList.add('is-loaded'))
@@ -59,21 +60,24 @@ if (heroEl) {
 
     const updateHeroScroll = () => {
       const rect = heroEl.getBoundingClientRect()
+      state.active = rect.bottom > -80 && rect.top < window.innerHeight + 80
       state.targetScroll = Math.min(1, Math.max(0, -rect.top / Math.max(1, rect.height * 0.82)))
     }
 
     const animateHero = () => {
-      state.videoX += (state.targetVideoX - state.videoX) * 0.08
-      state.videoY += (state.targetVideoY - state.videoY) * 0.08
-      state.glowX += (state.targetGlowX - state.glowX) * 0.07
-      state.glowY += (state.targetGlowY - state.glowY) * 0.07
-      state.scroll += (state.targetScroll - state.scroll) * 0.12
+      if (state.active) {
+        state.videoX += (state.targetVideoX - state.videoX) * 0.06
+        state.videoY += (state.targetVideoY - state.videoY) * 0.06
+        state.glowX += (state.targetGlowX - state.glowX) * 0.055
+        state.glowY += (state.targetGlowY - state.glowY) * 0.055
+        state.scroll += (state.targetScroll - state.scroll) * 0.1
 
-      heroEl.style.setProperty('--hero-video-x', state.videoX.toFixed(2) + 'px')
-      heroEl.style.setProperty('--hero-video-y', state.videoY.toFixed(2) + 'px')
-      heroEl.style.setProperty('--cursor-x', state.glowX.toFixed(2) + '%')
-      heroEl.style.setProperty('--cursor-y', state.glowY.toFixed(2) + '%')
-      heroEl.style.setProperty('--hero-scroll', state.scroll.toFixed(3))
+        heroEl.style.setProperty('--hero-video-x', state.videoX.toFixed(2) + 'px')
+        heroEl.style.setProperty('--hero-video-y', state.videoY.toFixed(2) + 'px')
+        heroEl.style.setProperty('--cursor-x', state.glowX.toFixed(2) + '%')
+        heroEl.style.setProperty('--cursor-y', state.glowY.toFixed(2) + '%')
+        heroEl.style.setProperty('--hero-scroll', state.scroll.toFixed(3))
+      }
       requestAnimationFrame(animateHero)
     }
 
