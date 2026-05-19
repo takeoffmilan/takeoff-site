@@ -548,15 +548,15 @@ h1, h2, h3, h4, h5 {
 .hero-line {
   display: block;
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+  transform: translateY(26px);
+  transition: opacity 1.25s var(--ease-out), transform 1.25s var(--ease-out);
   will-change: transform, opacity;
 }
 .hero.is-loaded .hero-line {
   opacity: 1;
   transform: translateY(0);
 }
-.hero.is-loaded .hero-line-grad { transition-delay: 0.16s; }
+.hero.is-loaded .hero-line-grad { transition-delay: 0.34s; }
 .hero-line-grad {
   display: block;
   font-size: 0.76em;
