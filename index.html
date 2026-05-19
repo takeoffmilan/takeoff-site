@@ -70,17 +70,17 @@
 <header class="site-header" data-header>
   <div class="header-inner">
     <a href="#top" class="logo-link" aria-label="TakeOff home">
-      <img src="/images/logo.png" alt="TakeOff" class="logo-img" width="130" height="32" fetchpriority="high" />
+      <img src="/images/logo-white.svg" alt="TakeOff" class="logo-img" width="120" height="34" fetchpriority="high" />
     </a>
 
     <nav class="main-nav" aria-label="Navigazione">
-      <a href="/funzionalita">Funzionalità</a>
-      <a href="/prezzi">Prezzi</a>
-      <a href="/vetrina">Vetrina</a>
+      <a href="#funzionalita">Funzionalità</a>
+      <a href="#prezzi">Prezzi</a>
+      <a href="#vetrina">Vetrina</a>
       <a href="#faq">FAQ</a>
     </nav>
 
-    <a href="#cta" class="btn btn-dark header-cta">Inizia gratis</a>
+    <a href="#inizia" class="btn btn-primary header-cta">Inizia gratis</a>
 
     <button class="menu-toggle" data-menu-toggle aria-label="Apri menu">
       <span></span><span></span><span></span>
@@ -142,367 +142,796 @@
   </div>
 </section>
 
-<!-- ========== S2. PROBLEM (sticky scroll counter) ========== -->
-<section class="problem section-pad">
-  <div class="container">
-    <div class="problem-grid">
-      <div class="problem-sticky">
-        <p class="eyebrow">Il vero costo degli abbonamenti</p>
-        <h2 class="section-title">
-          Shopify, Wix, Squarespace.<br />
-          <span class="grad-move">Ti fanno pagare ovunque.</span>
-        </h2>
-        <p class="section-lead">
-          Pensavi 29€/mese? Aggiungi commissioni, app, temi premium.
-          Scorri e fai i conti tu stesso.
-        </p>
-      </div>
+<!-- ============================================================
+     S1 — IL VERO PROBLEMA
+     ============================================================ -->
+<section class="tk-section tk-problem" id="problema" aria-label="Il vero problema">
+  <div class="tk-bg-blob tk-bg-blob-a"></div>
+  <div class="tk-bg-blob tk-bg-blob-b"></div>
+  <div class="tk-bg-grid"></div>
 
-      <div class="problem-counter-stack" data-counter-stack>
-        <div class="counter-row" data-counter-row>
-          <span class="counter-label">Shopify Basic mensile</span>
-          <span class="counter-value">+ 348€/anno</span>
-        </div>
-        <div class="counter-row" data-counter-row>
-          <span class="counter-label">Commissioni transazione 2%</span>
-          <span class="counter-value">+ 1.000€/anno</span>
-        </div>
-        <div class="counter-row" data-counter-row>
-          <span class="counter-label">App essenziali (translate, cart, upsell)</span>
-          <span class="counter-value">+ 1.800€/anno</span>
-        </div>
-        <div class="counter-row" data-counter-row>
-          <span class="counter-label">Theme premium + manutenzione</span>
-          <span class="counter-value">+ 350€/anno</span>
-        </div>
-
-        <div class="counter-total">
-          <div class="counter-total-value">€35.000</div>
-          <p class="counter-total-label">In 10 anni. E il sito non è ancora tuo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== S3. SOLUTION ========== -->
-<section class="solution section-pad" id="cms">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">La scelta intelligente</p>
-      <h2 class="section-title">Pago una volta. <span class="grad-move">Lo tengo per sempre.</span></h2>
-      <p class="section-lead center">
-        TakeOff gira su Cloudflare — l'infrastruttura di NASA, Discord, OpenAI.
-        Gratis fino a 100.000 visite/giorno. Per il 95% dei siti, gratis significa <strong>gratis per sempre</strong>.
+  <div class="tk-container tk-problem-grid">
+    <div class="tk-problem-left" data-reveal>
+      <p class="eyebrow">Il vero costo</p>
+      <h2 class="tk-h2">
+        Il sito lo paghi una volta.<br />
+        Le piattaforme le paghi <span class="grad-move">per sempre</span>.
+      </h2>
+      <p class="tk-lead">
+        Shopify, Wix, Squarespace e simili sembrano economici all'inizio.
+        Poi arrivano app, commissioni, limiti, temi premium e costi ricorrenti.
       </p>
-    </div>
-
-    <div class="solution-grid">
-      <div class="solution-card them" data-reveal>
-        <h3>Shopify Plus</h3>
-        <ul>
-          <li>Mensile <span class="price">2.000€</span></li>
-          <li>Commissioni <span class="price">0.15% per ordine</span></li>
-          <li>App essenziali <span class="price">200€/mese</span></li>
-          <li>Hosting <span class="price">Incluso</span></li>
-          <li>Codice <span class="price">Chiuso</span></li>
-          <li><strong>Costo 5 anni</strong> <span class="price">130.000€</span></li>
-        </ul>
-      </div>
-
-      <div class="solution-card us" data-reveal>
-        <h3>TakeOff</h3>
-        <ul>
-          <li>Mensile <span class="price">€0</span></li>
-          <li>Commissioni <span class="price">0%</span></li>
-          <li>App essenziali <span class="price">Incluse</span></li>
-          <li>Hosting <span class="price">Cloudflare gratis</span></li>
-          <li>Codice <span class="price">Tuo, scaricabile</span></li>
-          <li><strong>Costo 5 anni</strong> <span class="price">€0</span></li>
-        </ul>
+      <div class="tk-problem-total" data-problem-total>
+        <p class="tk-problem-total-label">Costo nascosto stimato</p>
+        <div class="tk-problem-total-value"><span data-cost-counter>0</span><span class="tk-mu">€/anno</span></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ========== S4. FEATURES (6 cards) ========== -->
-<section class="features section-pad">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Cosa fa TakeOff</p>
-      <h2 class="section-title light">Tutto quello che ti serve. <span class="grad-move">Niente di più.</span></h2>
-      <p class="section-lead light center">
-        Un CMS completo, costruito da zero per essere veloce, semplice e potente.
-      </p>
-    </div>
-
-    <div class="features-strip">
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">E</div>
-        <h3>Editor visuale live</h3>
-        <p>Trascina, sposta, modifica. Vedi i cambiamenti in tempo reale. Come Canva, ma per il tuo sito intero.</p>
+    <div class="tk-problem-stack" data-problem-stack>
+      <article class="tk-cost-card" data-cost="29" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Shopify</span>
+          <span class="tk-cost-amount">+29€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Piano base ricorrente, mai disattivabile.</p>
       </article>
-
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">$</div>
-        <h3>E-commerce completo</h3>
-        <p>Prodotti, varianti, stock, ordini, fatture. Tutto integrato. Niente plugin esterni.</p>
+      <article class="tk-cost-card" data-cost="34" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Wix</span>
+          <span class="tk-cost-amount">+34€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Piano Business essenziale per vendere online.</p>
       </article>
-
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">€</div>
-        <h3>Pagamenti Stripe</h3>
-        <p>Carte, Apple Pay, Google Pay. Zero commissioni TakeOff. Tutto quello che incassi è tuo.</p>
+      <article class="tk-cost-card" data-cost="36" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Squarespace</span>
+          <span class="tk-cost-amount">+36€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Piano Business con commerce limitato.</p>
       </article>
-
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">+</div>
-        <h3>Marketplace App</h3>
-        <p>Traduzioni, abandoned cart, upsell, email automation, timer. Tutto incluso. Sempre.</p>
+      <article class="tk-cost-card" data-cost="46" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Webflow CMS</span>
+          <span class="tk-cost-amount">+46€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Piano CMS per pubblicare contenuti.</p>
       </article>
-
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">S</div>
-        <h3>SEO &amp; Performance</h3>
-        <p>Meta tag, schema, sitemap automatici. Lighthouse 100/100 di default. Google ti ama da subito.</p>
+      <article class="tk-cost-card" data-cost="200" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">App essenziali</span>
+          <span class="tk-cost-amount">+200€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Traduzioni, abbandoni, upsell, email automation.</p>
       </article>
-
-      <article class="feature-card" data-reveal>
-        <div class="feature-icon">⚡</div>
-        <h3>Velocità edge</h3>
-        <p>300+ data center Cloudflare. Il tuo sito carica in &lt;500ms ovunque al mondo. Automatico.</p>
+      <article class="tk-cost-card" data-cost="40" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Tema premium</span>
+          <span class="tk-cost-amount">+40€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Aggiornamenti, supporto, licenza annuale.</p>
+      </article>
+      <article class="tk-cost-card" data-cost="83" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Commissioni 2%</span>
+          <span class="tk-cost-amount">+83€/mese*</span>
+        </div>
+        <p class="tk-cost-hint">Su 50k€/anno di vendite. *Stima media.</p>
+      </article>
+      <article class="tk-cost-card" data-cost="50" data-reveal>
+        <div class="tk-cost-card-head">
+          <span class="tk-cost-brand">Manutenzione</span>
+          <span class="tk-cost-amount">+50€/mese</span>
+        </div>
+        <p class="tk-cost-hint">Aggiornamenti, backup, sicurezza, dev fix.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ========== S5. COMPARISON TABLE + CALCULATOR ========== -->
-<section class="comparison section-pad">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Confronto diretto</p>
-      <h2 class="section-title">È matematica, <span class="grad-move">non opinione.</span></h2>
-    </div>
+<!-- ============================================================
+     S2 — CALCOLATORE DINAMICO
+     ============================================================ -->
+<section class="tk-section tk-calc-section" id="calcolatore" aria-label="Calcolatore costi">
+  <div class="tk-bg-blob tk-bg-blob-c"></div>
+  <div class="tk-bg-grid"></div>
 
-    <div class="comp-table">
-      <div class="comp-row header">
-        <div class="comp-cell"></div>
-        <div class="comp-cell" style="text-align:center;">Shopify Plus</div>
-        <div class="comp-cell takeoff-col">TakeOff</div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell label">Abbonamento mensile</div>
-        <div class="comp-cell">2.000€/mese</div>
-        <div class="comp-cell takeoff"><span class="neon">€0</span></div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell label">Commissioni transazione</div>
-        <div class="comp-cell">0.15% per ordine</div>
-        <div class="comp-cell takeoff"><span class="neon">0%</span></div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell label">App essenziali incluse</div>
-        <div class="comp-cell">200€/mese extra</div>
-        <div class="comp-cell takeoff"><span class="neon">Incluse</span></div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell label">Codice esportabile</div>
-        <div class="comp-cell">No, lock-in</div>
-        <div class="comp-cell takeoff"><span class="neon">Sì, tuo</span></div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell label"><strong>Costo 5 anni</strong></div>
-        <div class="comp-cell"><strong>130.000€</strong></div>
-        <div class="comp-cell takeoff"><strong><span class="neon">€0</span></strong></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== S6. CALCULATOR ========== -->
-<section class="calculator section-pad-sm">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
       <p class="eyebrow">Calcola il tuo risparmio</p>
-      <h2 class="section-title">Quanto risparmi davvero?</h2>
+      <h2 class="tk-h2">Fai i conti <span class="grad-move">tu</span>.</h2>
+      <p class="tk-lead">Muovi gli slider e scopri quanto può costarti davvero una piattaforma in 5 anni.</p>
     </div>
 
-    <div class="calc-box">
-      <div class="calc-controls">
-        <div class="calc-slider">
-          <label>Fatturato annuo</label>
-          <input type="range" id="calcRevenue" min="10000" max="2000000" step="10000" value="200000" />
-          <span class="value" data-calc-revenue>€200.000</span>
+    <div class="tk-calc-card liquid-glass" data-reveal>
+      <div class="tk-calc-grid">
+        <div class="tk-calc-controls">
+          <div class="tk-calc-tabs" role="tablist" aria-label="Piattaforma di partenza">
+            <button class="tk-calc-tab is-active" data-platform="shopify-basic" data-platform-monthly="29">Shopify Basic <span>29€</span></button>
+            <button class="tk-calc-tab" data-platform="shopify-plus" data-platform-monthly="2000">Shopify Plus <span>2000€</span></button>
+            <button class="tk-calc-tab" data-platform="wix" data-platform-monthly="34">Wix <span>34€</span></button>
+            <button class="tk-calc-tab" data-platform="squarespace" data-platform-monthly="36">Squarespace <span>36€</span></button>
+            <button class="tk-calc-tab" data-platform="custom" data-platform-monthly="0">Custom</button>
+          </div>
+
+          <div class="tk-calc-field">
+            <label>
+              <span>Fatturato annuo</span>
+              <output data-out="revenue">€200.000</output>
+            </label>
+            <input type="range" id="calcRevenue" min="20000" max="1000000" step="5000" value="200000" />
+          </div>
+
+          <div class="tk-calc-field">
+            <label>
+              <span>Anni di utilizzo</span>
+              <output data-out="years">5 anni</output>
+            </label>
+            <input type="range" id="calcYears" min="1" max="10" step="1" value="5" />
+          </div>
+
+          <div class="tk-calc-field">
+            <label>
+              <span>Costo app mensili</span>
+              <output data-out="apps">€200/mese</output>
+            </label>
+            <input type="range" id="calcApps" min="0" max="500" step="10" value="200" />
+          </div>
+
+          <div class="tk-calc-field">
+            <label>
+              <span>Commissioni piattaforma</span>
+              <output data-out="commission">2.0%</output>
+            </label>
+            <input type="range" id="calcCommission" min="0" max="30" step="1" value="20" />
+          </div>
+
+          <div class="tk-calc-field tk-calc-field-custom" hidden>
+            <label>
+              <span>Costo piattaforma /mese</span>
+              <output data-out="custom-platform">€29</output>
+            </label>
+            <input type="range" id="calcCustomPlatform" min="0" max="2500" step="10" value="29" />
+          </div>
         </div>
-        <div class="calc-slider">
-          <label>Anni di utilizzo</label>
-          <input type="range" id="calcYears" min="1" max="10" step="1" value="5" />
-          <span class="value" data-calc-years>5 anni</span>
+
+        <div class="tk-calc-result">
+          <p class="tk-calc-label">Costo stimato in <span data-result-years>5</span> anni</p>
+          <div class="tk-calc-big">€<span data-calc-result-big>0</span></div>
+          <p class="tk-calc-saving">
+            Risparmio potenziale scegliendo TakeOff:
+            <strong data-calc-saving>€0</strong>
+          </p>
+          <div class="tk-calc-breakdown">
+            <div class="tk-bdrow"><span>Piattaforma</span><strong data-bd-platform>€0</strong></div>
+            <div class="tk-bdrow"><span>App essenziali</span><strong data-bd-apps>€0</strong></div>
+            <div class="tk-bdrow"><span>Commissioni</span><strong data-bd-commission>€0</strong></div>
+            <div class="tk-bdrow tk-bdrow-takeoff"><span>TakeOff (una volta)</span><strong>0€/mese</strong></div>
+          </div>
+          <a href="#inizia" class="btn btn-primary btn-arrow tk-calc-cta"><span>Voglio risparmiarli</span></a>
         </div>
       </div>
-      <div class="calc-result">
-        <p class="calc-result-label">Risparmi scegliendo TakeOff</p>
-        <div class="calc-result-value" data-calc-result>€42.000</div>
-        <p class="calc-result-foot">Calcolato su abbonamento Shopify + 2% commissioni + 200€/mese app</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S3 — HOVER EXPAND GALLERY (funzionalita)
+     ============================================================ -->
+<section class="tk-section tk-expand" id="funzionalita" aria-label="Tutto incluso">
+  <div class="tk-bg-blob tk-bg-blob-a"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">CMS + Design + Performance</p>
+      <h2 class="tk-h2">Tutto quello che di solito paghi a parte. <span class="grad-move">Qui è incluso.</span></h2>
+      <p class="tk-lead">CMS, performance, SEO, contenuti, sezioni e gestione: un sistema completo, non un sito bloccato.</p>
+    </div>
+
+    <div class="tk-expand-rail" data-expand-rail role="tablist" aria-label="Funzionalità incluse">
+      <!-- 10 cards -->
+      <button class="tk-expand-card is-active" data-expand-card data-bg="#1a1a28" role="tab" aria-selected="true">
+        <span class="tk-ec-code">01</span>
+        <span class="tk-ec-title">CMS gratuito</span>
+        <span class="tk-ec-desc">Modifica testi, immagini e sezioni senza pagare piattaforme esterne.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#1c2230" role="tab" aria-selected="false">
+        <span class="tk-ec-code">02</span>
+        <span class="tk-ec-title">SEO ready</span>
+        <span class="tk-ec-desc">Struttura pulita, pagine veloci, meta tag e contenuti pronti per Google.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#202032" role="tab" aria-selected="false">
+        <span class="tk-ec-code">03</span>
+        <span class="tk-ec-title">Performance</span>
+        <span class="tk-ec-desc">Sito leggero, veloce, ottimizzato per Core Web Vitals.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#241e30" role="tab" aria-selected="false">
+        <span class="tk-ec-code">04</span>
+        <span class="tk-ec-title">Form contatti</span>
+        <span class="tk-ec-desc">Richieste, preventivi e lead raccolti senza plugin inutili.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#281c28" role="tab" aria-selected="false">
+        <span class="tk-ec-code">05</span>
+        <span class="tk-ec-title">Blog / News</span>
+        <span class="tk-ec-desc">Pubblica contenuti e aggiornamenti in autonomia.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#2a2030" role="tab" aria-selected="false">
+        <span class="tk-ec-code">06</span>
+        <span class="tk-ec-title">Gallery</span>
+        <span class="tk-ec-desc">Mostra foto, lavori, prodotti o ambienti con layout premium.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#231d2a" role="tab" aria-selected="false">
+        <span class="tk-ec-code">07</span>
+        <span class="tk-ec-title">Catalogo</span>
+        <span class="tk-ec-desc">Prodotti, servizi o menù organizzati in modo chiaro.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#1e2228" role="tab" aria-selected="false">
+        <span class="tk-ec-code">08</span>
+        <span class="tk-ec-title">Analytics</span>
+        <span class="tk-ec-desc">Tracciamento visite, eventi, conversioni e campagne.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#1a2030" role="tab" aria-selected="false">
+        <span class="tk-ec-code">09</span>
+        <span class="tk-ec-title">Integrazioni</span>
+        <span class="tk-ec-desc">WhatsApp, Maps, Stripe, Meta Pixel, Google Analytics e automazioni.</span>
+      </button>
+      <button class="tk-expand-card" data-expand-card data-bg="#1d1d2e" role="tab" aria-selected="false">
+        <span class="tk-ec-code">10</span>
+        <span class="tk-ec-title">Design custom</span>
+        <span class="tk-ec-desc">Niente template copiati. Ogni sito viene costruito intorno al brand.</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S4 — STACK TECNOLOGICO PREMIUM
+     ============================================================ -->
+<section class="tk-section tk-stack" id="stack" aria-label="Stack tecnologico">
+  <div class="tk-bg-blob tk-bg-blob-b"></div>
+  <div class="tk-bg-grid"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">Architettura</p>
+      <h2 class="tk-h2">Non è un template. <span class="grad-move">È un sistema.</span></h2>
+      <p class="tk-lead">TakeOff combina design custom, CMS leggero, hosting performante e integrazioni reali.</p>
+    </div>
+
+    <div class="tk-orbit-wrap" data-reveal>
+      <div class="tk-orbit">
+        <div class="tk-orbit-core" data-orbit-core>
+          <img src="/images/logo-white.svg" alt="TakeOff" />
+        </div>
+        <svg class="tk-orbit-svg" viewBox="-260 -260 520 520" aria-hidden="true">
+          <circle r="170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          <circle r="230" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        </svg>
+
+        <button class="tk-orbit-node" data-orbit-node data-node-id="cloudflare" style="--angle: 0deg; --radius: 170px;">
+          <span class="tk-node-label">Cloudflare</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="github" style="--angle: 45deg; --radius: 230px;">
+          <span class="tk-node-label">GitHub</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="stripe" style="--angle: 90deg; --radius: 170px;">
+          <span class="tk-node-label">Stripe</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="ga" style="--angle: 135deg; --radius: 230px;">
+          <span class="tk-node-label">Google Analytics</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="meta" style="--angle: 180deg; --radius: 170px;">
+          <span class="tk-node-label">Meta Pixel</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="whatsapp" style="--angle: 225deg; --radius: 230px;">
+          <span class="tk-node-label">WhatsApp</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="brevo" style="--angle: 270deg; --radius: 170px;">
+          <span class="tk-node-label">Brevo / Klaviyo</span>
+        </button>
+        <button class="tk-orbit-node" data-orbit-node data-node-id="openai" style="--angle: 315deg; --radius: 230px;">
+          <span class="tk-node-label">OpenAI</span>
+        </button>
+      </div>
+
+      <div class="tk-orbit-detail liquid-glass" data-orbit-detail>
+        <h3 data-detail-title>Cloudflare</h3>
+        <p data-detail-desc>Hosting veloce, scalabile e stabile. Edge network globale, SSL automatico, zero downtime.</p>
+        <p class="tk-orbit-hint">Tocca un nodo per vedere il dettaglio.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== S7. STEPS ========== -->
-<section class="steps section-pad">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Come funziona</p>
-      <h2 class="section-title">3 step. <span class="grad-move">Sito online.</span></h2>
+<!-- ============================================================
+     S5 — DEMO CMS INTERATTIVA
+     ============================================================ -->
+<section class="tk-section tk-cms-demo" id="cms" aria-label="Demo CMS interattiva">
+  <div class="tk-bg-blob tk-bg-blob-a"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">CMS gratuito</p>
+      <h2 class="tk-h2">Clicca. Modifica. <span class="grad-move">Pubblica.</span></h2>
+      <p class="tk-lead">Il tuo sito non rimane bloccato: puoi aggiornare testi, immagini e contenuti senza dipendere da nessuno.</p>
     </div>
 
-    <div class="steps-grid">
-      <div class="step-card" data-reveal>
-        <div class="step-num">01</div>
-        <h3>Scegli un template</h3>
-        <p>Decine di template pronti, ottimizzati per ogni settore. Tutti modificabili al 100%.</p>
+    <div class="tk-cms-stage" data-reveal>
+      <div class="tk-cms-browser liquid-glass" data-cms-browser>
+        <div class="tk-browser-bar">
+          <span></span><span></span><span></span>
+          <div class="tk-browser-url">takeoffmilan.com / studio-premium</div>
+        </div>
+        <div class="tk-cms-preview" data-cms-preview>
+          <div class="tk-cms-hero" data-cms-target="hero">
+            <h3 data-cms-text="hero">Studio premium nel cuore di Milano</h3>
+            <p data-cms-text="sub">Servizio personalizzato, ambiente curato, esperienza unica.</p>
+            <button class="tk-cms-cta" data-cms-text="cta">Prenota ora</button>
+          </div>
+          <div class="tk-cms-image" data-cms-target="image"></div>
+          <div class="tk-cms-row">
+            <div class="tk-cms-mini" data-cms-target="price">
+              <p class="tk-cms-mini-label">Servizio Premium</p>
+              <p class="tk-cms-mini-value" data-cms-text="price">da €120</p>
+            </div>
+            <div class="tk-cms-mini" data-cms-target="hours">
+              <p class="tk-cms-mini-label">Orari</p>
+              <p class="tk-cms-mini-value" data-cms-text="hours">Lun–Sab 10–20</p>
+            </div>
+          </div>
+        </div>
+        <div class="tk-cms-toast" data-cms-toast hidden>
+          <span class="tk-toast-dot"></span>
+          <span>Modifica salvata nel CMS</span>
+        </div>
       </div>
-      <div class="step-card" data-reveal>
-        <div class="step-num">02</div>
-        <h3>Personalizza tutto</h3>
-        <p>Editor drag&amp;drop. Colori, font, sezioni, prodotti. Anteprima live mentre modifichi.</p>
-      </div>
-      <div class="step-card" data-reveal>
-        <div class="step-num">03</div>
-        <h3>Pubblica gratis</h3>
-        <p>Un click, il sito è live su Cloudflare. Dominio, SSL, CDN: tutto incluso, in 47 secondi.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ========== S8. PROOF (numbers + testimonials) ========== -->
-<section class="proof section-pad">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Social proof</p>
-      <h2 class="section-title">I numeri parlano <span class="grad-move">da soli.</span></h2>
-    </div>
-
-    <div class="proof-numbers">
-      <div data-reveal>
-        <div class="proof-num-value gradient" data-counter-to="1200">0</div>
-        <div class="proof-num-label">Siti live</div>
-      </div>
-      <div data-reveal>
-        <div class="proof-num-value gradient">€0</div>
-        <div class="proof-num-label">Pagati in abbonamenti</div>
-      </div>
-      <div data-reveal>
-        <div class="proof-num-value gradient" data-counter-to="100">0</div>
-        <div class="proof-num-label">% siti di proprietà del cliente</div>
-      </div>
-      <div data-reveal>
-        <div class="proof-num-value gradient" data-counter-to="47">0</div>
-        <div class="proof-num-label">Secondi medi al deploy</div>
-      </div>
-    </div>
-
-    <div class="testimonials">
-      <div class="testi" data-reveal>
-        <p class="testi-quote">"Risparmiamo €2.400 all'anno rispetto a Shopify. Il sito è più veloce e finalmente lo possiedo."</p>
-        <p class="testi-author">Mario Rossi · E-commerce Roma</p>
-      </div>
-      <div class="testi" data-reveal>
-        <p class="testi-quote">"Ho fatto il sito in 3 ore. Senza saper programmare. Senza pagare niente."</p>
-        <p class="testi-author">Lucia B. · Negozio Milano</p>
-      </div>
-      <div class="testi" data-reveal>
-        <p class="testi-quote">"L'unica scelta sensata per i nostri clienti. Glielo proponiamo a tutti."</p>
-        <p class="testi-author">Studio Creativo MI · Agenzia</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== S9. MARKETPLACE APPS ========== -->
-<section class="apps section-pad">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Marketplace</p>
-      <h2 class="section-title">30+ app. <span class="grad-move">Tutte incluse.</span></h2>
-      <p class="section-lead center">Niente "premium store". Niente €50/mese per le traduzioni. È tutto già qui.</p>
-    </div>
-
-    <div class="apps-grid">
-      <div class="app-card" data-reveal><div class="app-icon">🌍</div><h4>Traduzioni</h4><p>Multilingua automatico AI-powered</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">🛒</div><h4>Abandoned Cart</h4><p>Recupera carrelli persi via email</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">📈</div><h4>Upsell</h4><p>Aumenta lo scontrino medio</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">🎯</div><h4>Cross-sell</h4><p>Suggerisci prodotti correlati</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">⏱️</div><h4>Timer Scarcity</h4><p>Countdown urgenza personalizzabili</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">📧</div><h4>Email Automation</h4><p>Flussi automatici personalizzati</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">🎨</div><h4>Product Options</h4><p>Varianti illimitate, personalizzazioni</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">📊</div><h4>Analytics</h4><p>Dashboard avanzata, real-time</p></div>
-      <div class="app-card" data-reveal><div class="app-icon">🔔</div><h4>Notifiche</h4><p>Push e popup smart, segmentati</p></div>
-    </div>
-
-    <div style="text-align:center; margin-top:48px;">
-      <a href="/funzionalita" class="btn btn-dark btn-arrow"><span>Esplora tutte le 30+ app</span></a>
+      <aside class="tk-cms-panel liquid-glass">
+        <div class="tk-cms-panel-head">
+          <div class="tk-cms-panel-dot"></div>
+          <strong>Editor TakeOff</strong>
+          <span class="tk-cms-status">Online</span>
+        </div>
+        <div class="tk-cms-actions">
+          <button class="tk-cms-action" data-cms-action="hero" data-value="Servizio top a Milano">
+            <span class="tk-cms-label">Titolo hero</span>
+            <span class="tk-cms-input">"Servizio top a Milano"</span>
+          </button>
+          <button class="tk-cms-action" data-cms-action="hero" data-value="Eleganza, qualità, dettaglio">
+            <span class="tk-cms-label">Titolo hero</span>
+            <span class="tk-cms-input">"Eleganza, qualità, dettaglio"</span>
+          </button>
+          <button class="tk-cms-action" data-cms-action="image" data-value="img-b">
+            <span class="tk-cms-label">Immagine principale</span>
+            <span class="tk-cms-input">Variante B</span>
+          </button>
+          <button class="tk-cms-action" data-cms-action="price" data-value="da €89">
+            <span class="tk-cms-label">Prezzo</span>
+            <span class="tk-cms-input">"da €89"</span>
+          </button>
+          <button class="tk-cms-action" data-cms-action="cta" data-value="Scrivici su WhatsApp">
+            <span class="tk-cms-label">CTA</span>
+            <span class="tk-cms-input">"Scrivici su WhatsApp"</span>
+          </button>
+          <button class="tk-cms-action" data-cms-action="hours" data-value="7 giorni su 7 — 9–22">
+            <span class="tk-cms-label">Orari</span>
+            <span class="tk-cms-input">"7gg, 9–22"</span>
+          </button>
+        </div>
+        <div class="tk-cms-toggles">
+          <label class="tk-toggle"><input type="checkbox" checked /><span></span> Sezione FAQ</label>
+          <label class="tk-toggle"><input type="checkbox" checked /><span></span> Recensioni</label>
+          <label class="tk-toggle"><input type="checkbox" /><span></span> Gallery</label>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ========== S10. FAQ ========== -->
-<section class="faq section-pad" id="faq">
-  <div class="container">
-    <div style="text-align:center; max-width:700px; margin:0 auto;">
-      <p class="eyebrow">Domande frequenti</p>
-      <h2 class="section-title">Le risposte che <span class="grad-move">cerchi.</span></h2>
+<!-- ============================================================
+     S6 — COMPARISON BATTLE (prezzi)
+     ============================================================ -->
+<section class="tk-section tk-comparison" id="prezzi" aria-label="Confronto piattaforme">
+  <div class="tk-bg-blob tk-bg-blob-b"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">Confronto diretto</p>
+      <h2 class="tk-h2">TakeOff contro <span class="grad-move">il costo invisibile</span> delle piattaforme.</h2>
+      <p class="tk-lead">Non confrontare solo il prezzo iniziale. Confronta quello che paghi davvero nel tempo.</p>
+
+      <div class="tk-comp-years" role="tablist" aria-label="Periodo di confronto">
+        <button class="tk-comp-year" data-years="1">1 anno</button>
+        <button class="tk-comp-year is-active" data-years="3">3 anni</button>
+        <button class="tk-comp-year" data-years="5">5 anni</button>
+      </div>
     </div>
 
-    <div class="faq-list">
-      <div class="faq-item" data-faq>
-        <button class="faq-q">E&apos; davvero gratis o c&apos;e&apos; una fregatura? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Davvero gratis. Niente carta richiesta, niente trial. Cloudflare ha un free tier generoso (100k visite/giorno) che copre il 95% dei siti. Se cresci oltre, paghi solo Cloudflare direttamente, TakeOff non prende niente.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">Cosa devo pagare? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Solo il dominio (circa 10 euro all&apos;anno) se ne vuoi uno personalizzato. Altrimenti il tuo sito vive su tuosito.takeoff.app gratis.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">E se cresco oltre il free tier? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Cloudflare Workers Paid e&apos; 5 euro/mese e copre milioni di visite. Ancora zero degli abbonamenti dei concorrenti.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">Posso esportare il mio sito? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Si&apos;. Il codice e&apos; in un tuo repo GitHub. Lo scarichi, lo porti dove vuoi. Niente lock-in.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">Funziona anche per chi non sa programmare? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Si&apos;. Editor visuale drag and drop tipo Canva. Non serve scrivere una riga di codice.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">Posso usarlo per i miei clienti? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Si&apos;, e&apos; pensato anche per agenzie. Vendi i siti senza farli mai pagare abbonamenti mensili. White-label disponibile.</div></div>
-      </div>
-      <div class="faq-item" data-faq>
-        <button class="faq-q">C&apos;e&apos; assistenza? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Community Discord gratuita. Per agenzie e business, supporto dedicato disponibile.</div></div>
-      </div>
+    <div class="tk-comp-grid" data-comp-grid>
+      <article class="tk-comp-card tk-comp-card-us" data-reveal>
+        <div class="tk-comp-card-head">
+          <span class="tk-comp-brand">TakeOff</span>
+          <span class="tk-comp-badge">Una volta sola</span>
+        </div>
+        <ul class="tk-comp-list">
+          <li><span>Canone piattaforma</span><strong class="tk-good">0€/mese</strong></li>
+          <li><span>Commissioni</span><strong class="tk-good">0%</strong></li>
+          <li><span>App essenziali</span><strong class="tk-good">CMS incluso</strong></li>
+          <li><span>Codice</span><strong class="tk-good">Custom</strong></li>
+          <li><span>Personalizzazione</span><strong class="tk-good">Design custom</strong></li>
+          <li><span>Performance</span><strong class="tk-good">Ottimizzata</strong></li>
+          <li><span>SEO</span><strong class="tk-good">Ready</strong></li>
+          <li><span>Controllo reale</span><strong class="tk-good">Alto</strong></li>
+        </ul>
+        <div class="tk-comp-total">
+          <span>Costo su <strong data-comp-years>3</strong> anni</span>
+          <div class="tk-comp-amount tk-good">Una sola volta</div>
+        </div>
+      </article>
+
+      <article class="tk-comp-card" data-comp-card="shopify" data-monthly="29" data-reveal>
+        <div class="tk-comp-card-head">
+          <span class="tk-comp-brand">Shopify</span>
+          <span class="tk-comp-badge tk-bad">Ricorrente</span>
+        </div>
+        <ul class="tk-comp-list">
+          <li><span>Canone piattaforma</span><strong class="tk-bad">da 29€/mese</strong></li>
+          <li><span>Commissioni</span><strong class="tk-bad">+ payment fees</strong></li>
+          <li><span>App essenziali</span><strong class="tk-bad">App store</strong></li>
+          <li><span>Codice</span><strong class="tk-bad">Ecosistema chiuso</strong></li>
+          <li><span>Personalizzazione</span><strong class="tk-bad">Template / App</strong></li>
+          <li><span>Performance</span><strong>Dipende da tema/app</strong></li>
+          <li><span>SEO</span><strong>Da configurare</strong></li>
+          <li><span>Controllo reale</span><strong class="tk-bad">Medio</strong></li>
+        </ul>
+        <div class="tk-comp-total">
+          <span>Costo su <strong data-comp-years>3</strong> anni</span>
+          <div class="tk-comp-amount tk-bad" data-comp-amount>€1.044</div>
+        </div>
+      </article>
+
+      <article class="tk-comp-card" data-comp-card="wix" data-monthly="34" data-reveal>
+        <div class="tk-comp-card-head">
+          <span class="tk-comp-brand">Wix</span>
+          <span class="tk-comp-badge tk-bad">Ricorrente</span>
+        </div>
+        <ul class="tk-comp-list">
+          <li><span>Canone piattaforma</span><strong class="tk-bad">da 34€/mese</strong></li>
+          <li><span>Commissioni</span><strong class="tk-bad">Limitazioni</strong></li>
+          <li><span>App essenziali</span><strong class="tk-bad">App store</strong></li>
+          <li><span>Codice</span><strong class="tk-bad">Chiuso</strong></li>
+          <li><span>Personalizzazione</span><strong class="tk-bad">Template</strong></li>
+          <li><span>Performance</span><strong class="tk-bad">Variabile</strong></li>
+          <li><span>SEO</span><strong>Configurabile</strong></li>
+          <li><span>Controllo reale</span><strong class="tk-bad">Medio/basso</strong></li>
+        </ul>
+        <div class="tk-comp-total">
+          <span>Costo su <strong data-comp-years>3</strong> anni</span>
+          <div class="tk-comp-amount tk-bad" data-comp-amount>€1.224</div>
+        </div>
+      </article>
+
+      <article class="tk-comp-card" data-comp-card="squarespace" data-monthly="36" data-reveal>
+        <div class="tk-comp-card-head">
+          <span class="tk-comp-brand">Squarespace</span>
+          <span class="tk-comp-badge tk-bad">Ricorrente</span>
+        </div>
+        <ul class="tk-comp-list">
+          <li><span>Canone piattaforma</span><strong class="tk-bad">da 36€/mese</strong></li>
+          <li><span>Commissioni</span><strong class="tk-bad">Extra</strong></li>
+          <li><span>App essenziali</span><strong class="tk-bad">Integrations</strong></li>
+          <li><span>Codice</span><strong class="tk-bad">Chiuso</strong></li>
+          <li><span>Personalizzazione</span><strong class="tk-bad">Template</strong></li>
+          <li><span>Performance</span><strong>Buona ma limitata</strong></li>
+          <li><span>SEO</span><strong>Configurabile</strong></li>
+          <li><span>Controllo reale</span><strong class="tk-bad">Medio</strong></li>
+        </ul>
+        <div class="tk-comp-total">
+          <span>Costo su <strong data-comp-years>3</strong> anni</span>
+          <div class="tk-comp-amount tk-bad" data-comp-amount>€1.296</div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ========== S11. FINAL CTA ========== -->
-<section class="final-cta section-pad" id="cta">
-  <div class="container">
-    <div class="final-cta-inner">
-      <p class="eyebrow" style="color: var(--neon-green);">Inizia ora</p>
-      <h2 class="section-title light">Smetti di pagare. <span class="grad-move">Inizia a possedere.</span></h2>
-      <p class="section-lead light center">Pronto in 3 minuti. Niente carta richiesta.</p>
+<!-- ============================================================
+     S7 — CONFIGURATORE TIPO SITO
+     ============================================================ -->
+<section class="tk-section tk-config" id="configuratore" aria-label="Configuratore tipo sito">
+  <div class="tk-bg-blob tk-bg-blob-c"></div>
 
-      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:40px;">
-        <a href="#" class="btn btn-primary btn-arrow"><span>Inizia gratis ora</span></a>
-        <a href="mailto:info@takeoffmilan.com" class="btn btn-ghost light">Parla con un umano</a>
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">Configuratore</p>
+      <h2 class="tk-h2">Che sito vuoi <span class="grad-move">costruire?</span></h2>
+      <p class="tk-lead">Scegli il tuo settore e guarda quali moduli TakeOff può preparare per te.</p>
+    </div>
+
+    <div class="tk-config-chips" role="tablist" aria-label="Categoria sito">
+      <button class="tk-chip is-active" data-config-chip="ristorante" data-modules="Menu digitale|Prenotazioni|Google Maps|Recensioni|Gallery|WhatsApp|Orari|Lingue">Ristorante</button>
+      <button class="tk-chip" data-config-chip="studio" data-modules="Servizi|Chi siamo|Prenotazione consulenza|FAQ|Recensioni|Blog|Lead form">Studio professionale</button>
+      <button class="tk-chip" data-config-chip="personal" data-modules="Bio|Portfolio|Press|Contatti|Newsletter|Booking|Social hub">Personal brand</button>
+      <button class="tk-chip" data-config-chip="landing" data-modules="Hero conversione|Pricing|FAQ|Testimonianze|Checkout / Stripe|Pixel tracking|Email capture">Landing vendita</button>
+      <button class="tk-chip" data-config-chip="portfolio" data-modules="Progetti|Categorie|Case study|About|Contatti|Reel video|Blog">Portfolio</button>
+      <button class="tk-chip" data-config-chip="catalogo" data-modules="Catalogo prodotti|Filtri categorie|Schede prodotto|Richiesta info|Listino PDF|Multi-lingua">Catalogo prodotti</button>
+      <button class="tk-chip" data-config-chip="evento" data-modules="Programma|Speakers|Sponsor|Biglietti|Mappa|Countdown|Stream">Evento</button>
+      <button class="tk-chip" data-config-chip="scuola" data-modules="Corsi|Docenti|Iscrizioni|Pagamenti|Calendario|Recensioni|FAQ">Scuola / corsi</button>
+      <button class="tk-chip" data-config-chip="local" data-modules="Servizi|Dove siamo|Orari|Recensioni|WhatsApp|Galleria|Promozioni">Azienda locale</button>
+    </div>
+
+    <div class="tk-config-stage">
+      <div class="tk-config-mockup liquid-glass" data-reveal>
+        <div class="tk-browser-bar">
+          <span></span><span></span><span></span>
+          <div class="tk-browser-url" data-config-url>takeoff.it / ristorante</div>
+        </div>
+        <div class="tk-config-mockup-body" data-config-mockup>
+          <h3 data-config-title>Esperienza che racconta una storia</h3>
+          <p data-config-sub>Menù, prenotazioni e ambiente, in un sito che funziona di sera come di pranzo.</p>
+          <div class="tk-config-grid">
+            <div class="tk-config-card"></div>
+            <div class="tk-config-card"></div>
+            <div class="tk-config-card"></div>
+          </div>
+        </div>
       </div>
 
-      <p class="final-cta-foot">0 euro per iniziare &middot; 0 euro per sempre &middot; niente sorprese</p>
+      <aside class="tk-config-modules liquid-glass" data-reveal>
+        <p class="tk-config-modules-label">Moduli consigliati</p>
+        <ul data-config-modules>
+          <li>Menu digitale</li>
+          <li>Prenotazioni</li>
+          <li>Google Maps</li>
+          <li>Recensioni</li>
+          <li>Gallery</li>
+          <li>WhatsApp</li>
+          <li>Orari</li>
+          <li>Lingue</li>
+        </ul>
+        <a href="#inizia" class="btn btn-primary btn-arrow tk-config-cta"><span>Voglio una demo per il mio settore</span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S8 — VETRINA / CASI STUDIO
+     ============================================================ -->
+<section class="tk-section tk-vetrina" id="vetrina" aria-label="Vetrina casi studio">
+  <div class="tk-bg-blob tk-bg-blob-a"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">Vetrina</p>
+      <h2 class="tk-h2">Non siti copia-incolla. <span class="grad-move">Sistemi costruiti</span> per obiettivi reali.</h2>
+    </div>
+  </div>
+
+  <div class="tk-vetrina-rail" data-vetrina-rail>
+    <article class="tk-case" data-reveal>
+      <div class="tk-case-mockup">
+        <span class="tk-case-tag">Food / Ristorante</span>
+        <h3>Gustosa</h3>
+      </div>
+      <div class="tk-case-body">
+        <p><strong>Cosa abbiamo fatto:</strong> menù, preventivi, gallery, social link, sezioni evento.</p>
+        <p><strong>Obiettivo:</strong> rendere il sito utile per clienti locali e richieste catering.</p>
+      </div>
+    </article>
+
+    <article class="tk-case" data-reveal>
+      <div class="tk-case-mockup tk-case-mockup-2">
+        <span class="tk-case-tag">Nautica / Catalogo</span>
+        <h3>VIBA</h3>
+      </div>
+      <div class="tk-case-body">
+        <p><strong>Cosa abbiamo fatto:</strong> configuratore, video gallery, modelli, sezioni dinamiche.</p>
+        <p><strong>Obiettivo:</strong> presentare prodotti complessi in modo elegante e navigabile.</p>
+      </div>
+    </article>
+
+    <article class="tk-case" data-reveal>
+      <div class="tk-case-mockup tk-case-mockup-3">
+        <span class="tk-case-tag">Scuola premium</span>
+        <h3>Alexander Sway</h3>
+      </div>
+      <div class="tk-case-body">
+        <p><strong>Cosa abbiamo fatto:</strong> posizionamento, servizi, pagine Google Ads, comunicazione elegante.</p>
+        <p><strong>Obiettivo:</strong> attrarre un target medio-alto e aziendale.</p>
+      </div>
+    </article>
+
+    <article class="tk-case" data-reveal>
+      <div class="tk-case-mockup tk-case-mockup-4">
+        <span class="tk-case-tag">E-commerce custom</span>
+        <h3>Friendshirt</h3>
+      </div>
+      <div class="tk-case-body">
+        <p><strong>Cosa abbiamo fatto:</strong> personalizzazione prodotto, upload foto, pack flow, UX acquisto.</p>
+        <p><strong>Obiettivo:</strong> ridurre frizione e rendere virale il prodotto.</p>
+      </div>
+    </article>
+
+    <article class="tk-case" data-reveal>
+      <div class="tk-case-mockup tk-case-mockup-5">
+        <span class="tk-case-tag">SaaS / Sistema custom</span>
+        <h3>TakeOff CMS</h3>
+      </div>
+      <div class="tk-case-body">
+        <p><strong>Cosa abbiamo fatto:</strong> CMS gratuito, hosting Cloudflare, gestione contenuti, performance.</p>
+        <p><strong>Obiettivo:</strong> eliminare costi ricorrenti inutili.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="tk-container">
+    <div class="tk-vetrina-controls">
+      <button class="tk-vetrina-nav" data-vetrina-prev aria-label="Caso studio precedente">&larr;</button>
+      <button class="tk-vetrina-nav" data-vetrina-next aria-label="Caso studio successivo">&rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S9 — PROCESSO
+     ============================================================ -->
+<section class="tk-section tk-process" id="processo" aria-label="Processo">
+  <div class="tk-bg-blob tk-bg-blob-b"></div>
+
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">Processo</p>
+      <h2 class="tk-h2">Prima vedi la demo. <span class="grad-move">Poi decidi.</span></h2>
+      <p class="tk-lead">Niente call infinite, preventivi vaghi o abbonamenti nascosti. Il processo è semplice.</p>
+    </div>
+
+    <div class="tk-process-timeline" data-process-timeline>
+      <button class="tk-step is-active" data-process-step="0">
+        <span class="tk-step-num">01</span><span class="tk-step-name">Brief</span>
+      </button>
+      <button class="tk-step" data-process-step="1">
+        <span class="tk-step-num">02</span><span class="tk-step-name">Demo</span>
+      </button>
+      <button class="tk-step" data-process-step="2">
+        <span class="tk-step-num">03</span><span class="tk-step-name">Design</span>
+      </button>
+      <button class="tk-step" data-process-step="3">
+        <span class="tk-step-num">04</span><span class="tk-step-name">CMS</span>
+      </button>
+      <button class="tk-step" data-process-step="4">
+        <span class="tk-step-num">05</span><span class="tk-step-name">Online</span>
+      </button>
+      <button class="tk-step" data-process-step="5">
+        <span class="tk-step-num">06</span><span class="tk-step-name">Ottimizzazione</span>
+      </button>
+      <div class="tk-process-progress" data-process-progress></div>
+    </div>
+
+    <div class="tk-process-detail liquid-glass" data-process-detail>
+      <div class="tk-process-detail-content" data-process-content>
+        <span class="tk-process-detail-step">01 — Brief</span>
+        <h3>Capiamo cosa serve, davvero.</h3>
+        <p>Ci dici cosa vendi, a chi parli e che obiettivo deve avere il sito. Poco modulo, molto ascolto.</p>
+      </div>
+      <div class="tk-process-detail-visual" data-process-visual></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S10 — CTA FINALE / AUDIT
+     ============================================================ -->
+<section class="tk-section tk-cta-final" id="inizia" aria-label="Inizia ora">
+  <div class="tk-bg-blob tk-bg-blob-a"></div>
+  <div class="tk-bg-blob tk-bg-blob-b"></div>
+
+  <div class="tk-container">
+    <div class="tk-cta-card liquid-glass" data-reveal>
+      <div class="tk-cta-copy">
+        <p class="eyebrow">Audit gratuito</p>
+        <h2 class="tk-h2">Vuoi vedere quanto potresti <span class="grad-move">risparmiare?</span></h2>
+        <p class="tk-lead">Ti prepariamo una demo concreta e una stima dei costi che puoi eliminare.</p>
+        <ul class="tk-trust-list">
+          <li>Nessun abbonamento TakeOff</li>
+          <li>Nessuna commissione sulle vendite</li>
+          <li>CMS incluso</li>
+          <li>Hosting performante</li>
+          <li>Design custom</li>
+        </ul>
+      </div>
+
+      <form class="tk-cta-form" id="auditForm" novalidate>
+        <label class="tk-cta-field">
+          <span>Piattaforma attuale</span>
+          <select name="platform">
+            <option>Shopify</option>
+            <option>Wix</option>
+            <option>Squarespace</option>
+            <option>WordPress</option>
+            <option>Non ho sito</option>
+            <option>Altro</option>
+          </select>
+        </label>
+
+        <label class="tk-cta-field">
+          <span>Quanto paghi al mese?</span>
+          <div class="tk-cta-slider-wrap">
+            <input type="range" min="0" max="500" step="5" value="79" id="auditMonthly" />
+            <output data-audit-monthly>€79/mese</output>
+          </div>
+        </label>
+
+        <label class="tk-cta-field tk-cta-toggle">
+          <span>Hai bisogno di un CMS?</span>
+          <label class="tk-toggle"><input type="checkbox" checked /><span></span></label>
+        </label>
+
+        <label class="tk-cta-field">
+          <span>Tipo di sito</span>
+          <select name="type">
+            <option>Vetrina</option>
+            <option>Catalogo</option>
+            <option>Landing vendita</option>
+            <option>Ristorante</option>
+            <option>Portfolio</option>
+            <option>Altro</option>
+          </select>
+        </label>
+
+        <label class="tk-cta-field">
+          <span>Sito attuale (opzionale)</span>
+          <input type="url" placeholder="https://..." />
+        </label>
+
+        <div class="tk-cta-result">
+          <p>Risparmio stimato annuo:</p>
+          <strong data-audit-saving>€948</strong>
+        </div>
+
+        <div class="tk-cta-actions">
+          <button type="submit" class="btn btn-primary btn-arrow"><span>Inizia gratis</span></button>
+          <a href="mailto:info@takeoffmilan.com" class="btn btn-ghost light">Richiedi una demo</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="tk-section tk-faq" id="faq" aria-label="FAQ">
+  <div class="tk-container">
+    <div class="tk-section-head" data-reveal>
+      <p class="eyebrow">FAQ</p>
+      <h2 class="tk-h2">Le risposte che <span class="grad-move">cerchi.</span></h2>
+    </div>
+
+    <div class="tk-faq-list">
+      <details class="tk-faq-item" data-faq-item>
+        <summary>Davvero non ci sono abbonamenti mensili?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">TakeOff non ti obbliga a pagare un canone mensile per usare il sito. Paghi il progetto. Eventuali servizi esterni scelti da te, come dominio, email o strumenti particolari, restano separati.</div>
+      </details>
+      <details class="tk-faq-item" data-faq-item>
+        <summary>Posso modificare il sito da solo?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">Sì. Le sezioni principali possono essere collegate a un CMS semplice, così puoi aggiornare testi, immagini e contenuti senza toccare codice.</div>
+      </details>
+      <details class="tk-faq-item" data-faq-item>
+        <summary>È come Shopify?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">No. Shopify è una piattaforma e-commerce con canoni, app e regole proprie. TakeOff è pensato per creare siti custom, veloci e gestibili, evitando costi ricorrenti inutili quando non servono.</div>
+      </details>
+      <details class="tk-faq-item" data-faq-item>
+        <summary>Posso vendere online?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">Sì, dove ha senso possiamo integrare pagamenti, richieste preventivo, cataloghi o checkout esterni. La struttura viene scelta in base al progetto.</div>
+      </details>
+      <details class="tk-faq-item" data-faq-item>
+        <summary>Il sito è veloce?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">Sì, la struttura è leggera, ottimizzata e pubblicata su infrastruttura performante (Cloudflare edge).</div>
+      </details>
+      <details class="tk-faq-item" data-faq-item>
+        <summary>Posso avere una demo prima di decidere?<span class="tk-faq-plus">+</span></summary>
+        <div class="tk-faq-body">Sì. L'idea è proprio mostrarti una direzione concreta prima di farti scegliere.</div>
+      </details>
     </div>
   </div>
 </section>

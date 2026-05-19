@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" fill="none" aria-label="TakeOff logo">
+  <defs>
+    <linearGradient id="takeoffRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5fad"/>
+      <stop offset="50%" stop-color="#ff9a7a"/>
+      <stop offset="100%" stop-color="#ffd65c"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="160" font-family="'Space Grotesk','DM Sans',system-ui,sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#ffffff">Take</text>
+  <ellipse cx="495" cy="120" rx="55" ry="78" stroke="url(#takeoffRing)" stroke-width="28" fill="none" transform="rotate(-15 495 120)"/>
+  <text x="555" y="160" font-family="'Space Grotesk','DM Sans',system-ui,sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#ffffff">ff</text>
+</svg>
