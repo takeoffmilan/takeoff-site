@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5 {
 .site-header.scrolled .header-inner { padding: 10px 24px; }
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 32px; width: auto; }
-.site-header .logo-img { filter: invert(1) brightness(2); }
+.site-header .logo-img { filter: none; }
 .main-nav { display: flex; gap: 32px; }
 .main-nav a {
   font-family: var(--font-display);
@@ -548,15 +548,20 @@ h1, h2, h3, h4, h5 {
 .hero-line {
   display: block;
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 1.25s var(--ease-out), transform 1.25s var(--ease-out);
+  transform: translateY(32px) scale(0.985);
+  filter: blur(8px);
+  transition:
+    opacity 1.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.55s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.55s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 .hero.is-loaded .hero-line {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
-.hero.is-loaded .hero-line-grad { transition-delay: 0.34s; }
+.hero.is-loaded .hero-line-grad { transition-delay: 0.46s; }
 .hero-line-grad {
   display: block;
   font-size: 0.76em;
@@ -1303,7 +1308,7 @@ h1, h2, h3, h4, h5 {
 .footer-brand img {
   width: 130px;
   margin-bottom: 16px;
-  filter: invert(1) brightness(2);
+  filter: none;
 }
 .footer-brand p {
   font-size: 14px;
