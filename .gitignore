@@ -6,4 +6,3 @@ dist
 .wrangler
 *.log
 .vscode
-.claude/
