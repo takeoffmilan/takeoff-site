@@ -456,3 +456,48 @@ console.log(
   window.addEventListener('scroll', sync, { passive: true })
   sync()
 })()
+
+// ============================================================
+// NUM-ANIM ($1.400 - $4.500+) — animazione scrub-in
+// ============================================================
+;(function() {
+  const els = document.querySelectorAll('[data-num-anim]')
+  if (!els.length) return
+  els.forEach((el) => {
+    const finalText = el.textContent
+    const matches = finalText.match(/(\$)([\d.]+)\s*[–-]\s*(\$)([\d.]+)/)
+    if (!matches) return
+    const start1 = 0
+    const start2 = 0
+    const end1 = parseInt(matches[2].replace(/\./g, ''), 10)
+    const end2 = parseInt(matches[4].replace(/\./g, ''), 10)
+    const hasPlus = finalText.includes('+')
+    el.dataset.original = finalText
+    el.textContent = `$0 – $0${hasPlus ? '+' : ''}`
+
+    const animate = () => {
+      const duration = 2000
+      const start = performance.now()
+      const ease = (t) => 1 - Math.pow(1 - t, 3)
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration)
+        const v1 = Math.round(end1 * ease(t)).toLocaleString('it-IT').replace(/,/g, '.')
+        const v2 = Math.round(end2 * ease(t)).toLocaleString('it-IT').replace(/,/g, '.')
+        el.textContent = `$${v1} – $${v2}${hasPlus ? '+' : ''}`
+        if (t < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = '1'
+          animate()
+          io.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.4 })
+    io.observe(el)
+  })
+})()

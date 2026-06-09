@@ -2077,3 +2077,130 @@ main { background: #0a0608; }
 
 /* Pricing badge "Consigliato" pulse */
 .pricing-best-badge { animation: pulseGlow 2.5s ease-in-out infinite; }
+
+/* =====================================================
+   FIX FINALI
+   ===================================================== */
+
+/* ===== LOGO: niente cornice/wrapping ===== */
+.site-header .logo-link, .site-header .logo-link.logo-pill {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.site-header .logo-img { height: 38px !important; width: auto !important; max-width: 150px; filter: none !important; }
+.pres-closing-logo {
+  background: transparent !important;
+  padding: 0 !important;
+  filter: none !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+/* ===== SLIDE 1 + 2: testi/bullet centrati ===== */
+.pres-slide-center { text-align: center; margin-left: auto; margin-right: auto; }
+.pres-mini-lead-center { text-align: center; }
+.pres-punch-center { text-align: center; }
+
+/* Bullet centrati: lista centrata orizzontalmente, item-text allineato a left ma li centriamo come griglia */
+.pres-bullets-center {
+  justify-content: center;
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.pres-bullets-center li { text-align: left; }
+
+/* ===== PACCHETTO BASE: ridark + bordo bianco + bottone bianco ===== */
+.pricing-card-light {
+  background: rgba(20,8,12,0.5) !important;
+  border-color: rgba(255,255,255,0.8) !important;
+  color: #fff !important;
+}
+.pricing-card-light h3 { color: #fff !important; background: none !important; -webkit-text-fill-color: #fff !important; }
+.pricing-card-light .pricing-tag { color: rgba(255,255,255,0.65) !important; }
+.pricing-card-light .pricing-price { color: rgba(255,255,255,0.7) !important; }
+.pricing-card-light .pricing-price s { color: rgba(255,255,255,0.4) !important; }
+.pricing-card-light .pricing-price strong { color: #fff !important; }
+.pricing-card-light .pricing-features { border-top-color: rgba(255,255,255,0.1) !important; }
+.pricing-card-light .pricing-features li { color: rgba(255,255,255,0.8) !important; }
+.pricing-card-light .pricing-features li::before { color: #fff !important; }
+.pricing-card-light .pricing-monthly { color: rgba(255,255,255,0.7) !important; border-top-color: rgba(255,255,255,0.06) !important; }
+.pricing-card-light .pricing-monthly strong { color: #21E6C1 !important; }
+.pricing-card-light .pricing-cta {
+  background: #fff !important;
+  color: #0a0608 !important;
+  animation: none !important;
+  text-shadow: none !important;
+  border: 2px solid #fff;
+}
+.pricing-card-light .pricing-cta:hover { background: #f0f0f0 !important; box-shadow: 0 12px 28px rgba(255,255,255,0.25) !important; }
+
+/* ===== NUMERI HUGE: forzare leggibilità + allineamento ===== */
+.num-huge {
+  font-size: clamp(48px, 9vw, 130px) !important;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+  overflow: visible;
+}
+.num-huge span { display: inline-block; }
+
+@media (max-width: 900px) {
+  .num-huge { font-size: clamp(36px, 11vw, 70px) !important; white-space: normal; }
+}
+
+/* Centratura container numeri */
+.pres-slide-center .num-huge,
+.pres-slide-wide .num-huge {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.num-huge-label {
+  text-align: center;
+}
+.num-huge-sub {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto !important;
+}
+
+/* ===== CLOSING: palle non tagliate, contenitore ridotto ===== */
+.pres-closing {
+  overflow: hidden;
+  padding: 100px 40px 80px !important;
+  min-height: auto !important;
+}
+.pres-closing .pres-blob-tl {
+  width: 360px !important;
+  height: 360px !important;
+  top: -140px !important;
+  left: -140px !important;
+}
+.pres-closing .pres-blob-tr {
+  width: 320px !important;
+  height: 320px !important;
+  top: -120px !important;
+  right: -130px !important;
+}
+.pres-closing .pres-blob-bl {
+  width: 280px !important;
+  height: 280px !important;
+  bottom: -100px !important;
+  left: -110px !important;
+}
+.pres-closing .pres-blob-br {
+  width: 340px !important;
+  height: 340px !important;
+  bottom: -130px !important;
+  right: -130px !important;
+}
+.pres-closing-inner { padding: 20px 0; }
+
+/* Logo closing: senza cornice, naturale */
+.pres-closing-logo {
+  width: 240px !important;
+  height: auto !important;
+  margin: 48px auto 0 !important;
+}
