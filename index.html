@@ -117,48 +117,35 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     DIVIDER 01 — IL PROBLEMA
-     ============================================================ -->
-<section class="pres-divider" data-pres-divider>
-  <div class="pres-blob pres-blob-tl"></div>
-  <div class="pres-blob pres-blob-tr"></div>
-  <div class="pres-blob pres-blob-bl"></div>
-  <div class="pres-blob pres-blob-br"></div>
-  <h2 class="pres-divider-title grad-move">Il problema</h2>
-</section>
+<!-- HEADER: logo sinistra + bottone destra (menu nav nascosto via CSS) -->
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a href="#top" class="logo-link" aria-label="TakeOff home">
+      <svg viewBox="0 0 760 220" class="logo-img" xmlns="http://www.w3.org/2000/svg" aria-label="TakeOff">
+        <defs><linearGradient id="hdr-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff5fad"/><stop offset="50%" stop-color="#ff9a7a"/><stop offset="100%" stop-color="#ffd65c"/>
+        </linearGradient></defs>
+        <text x="0" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">Take</text>
+        <ellipse cx="495" cy="120" rx="55" ry="78" stroke="url(#hdr-ring)" stroke-width="28" fill="none" transform="rotate(-15 495 120)"/>
+        <text x="555" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">ff</text>
+      </svg>
+    </a>
+    <a href="#pricing" class="btn btn-primary header-cta">Vedi i pacchetti</a>
+  </div>
+</header>
 
 <!-- ============================================================
-     S1 — IL PROBLEMA (slide A: All'inizio sembra tutto semplice)
+     SLIDE 1 — IL PROBLEMA (consolidata)
      ============================================================ -->
 <section class="pres-slide" data-reveal>
   <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">01 — Il problema</span>
   <div class="pres-slide-inner">
     <h2 class="pres-h">
-      All'inizio sembra<br />
-      tutto <span class="grad-move">semplice.</span>
+      All'inizio sembra tutto semplice.<br />
+      Poi <span class="grad-move">i costi crescono.</span>
     </h2>
-    <div class="pres-copy">
-      <p>Poi il sito cresce, servono più funzioni,<br />si installano nuove app.<br />E i costi mensili iniziano ad aumentare.</p>
-      <p class="pres-punch">TakeOff CMS nasce per darti un'alternativa diversa.</p>
-    </div>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
-
-<!-- ============================================================
-     S1 — IL PROBLEMA (slide B: Il design dipende dal tema)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">01 — Il problema</span>
-  <div class="pres-slide-inner">
-    <h2 class="pres-h pres-h-md">
-      Il design dipende dal tema, le funzioni<br />
-      dalle app, e <span class="grad-move">i costi crescono.</span>
-    </h2>
-    <ul class="pres-bullets pres-bullets-2col">
+    <p class="pres-mini-lead">Il design dipende dal tema, le funzioni dalle app, e ogni mese paghi qualcosa in più:</p>
+    <ul class="pres-bullets pres-bullets-2col pres-bullets-dot">
       <li>Sito simile a tanti altri</li>
       <li>Backend generico</li>
       <li>Design vincolato dal template</li>
@@ -168,194 +155,64 @@
       <li>Costi mensili che si sommano</li>
       <li>Difficoltà nell'esperienza premium</li>
     </ul>
-    <p class="pres-punch">Il punto è avere un sistema che puoi gestire, controllare<br />e far crescere, senza abbonamenti mensili.</p>
+    <p class="pres-punch">TakeOff CMS nasce per darti un'alternativa: un sistema che <span class="grad-move">puoi gestire, controllare e far crescere</span>, senza abbonamenti mensili.</p>
   </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
 </section>
 
 <!-- ============================================================
-     DIVIDER 02 — LA SOLUZIONE
-     ============================================================ -->
-<section class="pres-divider" data-pres-divider>
-  <div class="pres-blob pres-blob-tl"></div>
-  <div class="pres-blob pres-blob-tr"></div>
-  <div class="pres-blob pres-blob-bl"></div>
-  <div class="pres-blob pres-blob-br"></div>
-  <h2 class="pres-divider-title grad-move">La soluzione</h2>
-</section>
-
-<!-- ============================================================
-     S2 — LA SOLUZIONE (slide A: CMS proprietario)
+     SLIDE 2 — LA SOLUZIONE (consolidata)
      ============================================================ -->
 <section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">02 — La soluzione</span>
-  <div class="pres-slide-inner">
-    <h2 class="pres-h pres-h-md">
-      Un <span class="grad-move">CMS proprietario</span> senza<br />
-      costi mensili
+  <div class="pres-blob pres-blob-side-l"></div>
+  <div class="pres-slide-inner pres-slide-wide">
+    <h2 class="pres-h">
+      Un <span class="grad-move">CMS proprietario</span><br />
+      senza costi mensili.
     </h2>
-    <p class="pres-mini-lead">Dal CMS puoi gestire:</p>
-    <ul class="pres-bullets pres-bullets-2col pres-bullets-dot">
+    <p class="pres-mini-lead">Dal CMS gestisci tutto in un unico posto:</p>
+    <ul class="pres-bullets pres-bullets-3col pres-bullets-dot pres-bullets-compact">
       <li>Pagine e contenuti</li>
       <li>SEO e analytics</li>
       <li>Prodotti e collezioni</li>
       <li>Import/export</li>
       <li>Immagini e media</li>
-      <li>App native</li>
+      <li>App native incluse</li>
       <li>Ordini e clienti</li>
       <li>Impostazioni sito</li>
       <li>Traduzioni e mercati</li>
-      <li>Collegamenti ai servizi Google</li>
     </ul>
-    <p class="pres-punch">Un sito più libero, premium e semplice da utilizzare.</p>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
 
-<!-- ============================================================
-     S2 — LA SOLUZIONE (slide B: Mockup CMS Control Panel)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">02 — La soluzione</span>
-  <div class="pres-slide-inner pres-slide-wide">
-    <div class="cms-mockup">
+    <div class="cms-mockup" style="margin-top: 48px;">
       <div class="cms-mockup-head">
         <span class="cms-mockup-eye">TAKEOFF CONTROL PANEL</span>
         <h3>Benvenuto nel <span class="grad-move">CMS</span></h3>
-        <p>Crea, gestisci e fai crescere siti custom da un unico sistema operativo.</p>
+        <p>Crea, gestisci e fai crescere il tuo sito custom da un unico sistema operativo.</p>
         <span class="cms-mockup-tag">Website Operating System</span>
       </div>
       <div class="cms-mockup-actions">
-        <div class="cms-mockup-card">
-          <span class="cms-mockup-chip">AZIONE RAPIDA</span>
-          <strong>Modifica il sito</strong>
-          <p>Apri editor visuale, sezioni e tema.</p>
-        </div>
-        <div class="cms-mockup-card">
-          <span class="cms-mockup-chip">AZIONE RAPIDA</span>
-          <strong>Gestisci prodotti</strong>
-          <p>Catalogo, varianti, immagini e stock.</p>
-        </div>
-        <div class="cms-mockup-card">
-          <span class="cms-mockup-chip">AZIONE RAPIDA</span>
-          <strong>Carica media</strong>
-          <p>Libreria visuale, upload e URL.</p>
-        </div>
-        <div class="cms-mockup-card">
-          <span class="cms-mockup-chip">AZIONE RAPIDA</span>
-          <strong>Configura markets</strong>
-          <p>Lingue, valute e prezzi localizzati.</p>
-        </div>
-      </div>
-      <div class="cms-mockup-stats">
-        <div><span>PRODOTTI</span><strong>2</strong><p>Catalogo attivo e varianti.</p></div>
-        <div><span>COLLEZIONI</span><strong>1</strong><p>Struttura catalogo.</p></div>
-        <div><span>ORDINI</span><strong>1</strong><p>Stato operativo commerce.</p></div>
-        <div><span>MEDIA</span><strong>0</strong><p>Asset disponibili nel CMS.</p></div>
+        <div class="cms-mockup-card"><span class="cms-mockup-chip">AZIONE RAPIDA</span><strong>Modifica il sito</strong><p>Editor visuale, sezioni e tema.</p></div>
+        <div class="cms-mockup-card"><span class="cms-mockup-chip">AZIONE RAPIDA</span><strong>Gestisci prodotti</strong><p>Catalogo, varianti, stock.</p></div>
+        <div class="cms-mockup-card"><span class="cms-mockup-chip">AZIONE RAPIDA</span><strong>Carica media</strong><p>Libreria visuale e upload.</p></div>
+        <div class="cms-mockup-card"><span class="cms-mockup-chip">AZIONE RAPIDA</span><strong>Configura markets</strong><p>Lingue e valute localizzate.</p></div>
       </div>
     </div>
+
+    <p class="pres-punch" style="margin-top: 48px;">Un sito più libero, premium e <span class="grad-move">semplice da utilizzare</span>.</p>
   </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
 </section>
 
 <!-- ============================================================
-     S2 — LA SOLUZIONE (slide C: Tabella app native)
+     SLIDE 3 — I NUMERI (consolidata)
      ============================================================ -->
 <section class="pres-slide" data-reveal>
   <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">02 — La soluzione</span>
-  <div class="pres-slide-inner">
-    <h2 class="pres-h pres-h-md">Le <span class="grad-move">app native</span> incluse.</h2>
-    <table class="pres-table">
-      <thead>
-        <tr><th>Funzione TakeOff</th><th>App Shopify equivalente</th><th>Risparmio indicativo</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="pres-table-fn">Import Export Pro</td><td>Matrixify</td><td>da $20 a $200/mese</td></tr>
-        <tr><td class="pres-table-fn">Reviews</td><td>Judge.me / Loox / Yotpo</td><td>da $15/mese in su</td></tr>
-        <tr><td class="pres-table-fn">Search & Filters</td><td>Boost AI Search & Filter</td><td>fino a centinaia/mese</td></tr>
-        <tr><td class="pres-table-fn">Returns</td><td>AfterShip / Loop Returns</td><td>da $59/mese in su</td></tr>
-        <tr><td class="pres-table-fn">Upsell & Bundles</td><td>ReConvert</td><td>da $5 a $20+/mese</td></tr>
-        <tr><td class="pres-table-fn">Gift Cards / Store Credit</td><td>Rise.ai</td><td>da $20 a $200/mese</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
-
-<!-- ============================================================
-     S2 — LA SOLUZIONE (slide D: Grid 6 app)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">02 — La soluzione</span>
   <div class="pres-slide-inner pres-slide-wide">
-    <div class="apps-frame">
-      <div class="apps-frame-eye"><span class="apps-eye-tag">CORE</span></div>
-      <div class="apps-grid">
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="ED">ED</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff Editor</h4>
-          <p>Editor visuale centrale per costruire pagine, sezioni e contenuti del sito.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip app-chip-on">ATTIVO</span></div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="ML">ML</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff Media Library</h4>
-          <p>Libreria visuale per upload, URL, fallback, anteprime, filtri e tag.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip">CONFIGURABLE</span></div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="IE">IE</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff Import Export Pro</h4>
-          <p>Importa, esporta, aggiorna stock e prepara translation package senza app esterne.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip app-chip-on">ATTIVO</span></div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="Aa">Aa</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff Translate</h4>
-          <p>Gestione traduzioni centrali pubblico con fallback alla lingua originale.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip">CONFIGURABLE</span></div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="MK">MK</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff Markets</h4>
-          <p>Mercati, lingue, valute e pricing localizzato con fallback sicuri.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip">CONFIGURABLE</span></div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-head"><span class="app-icon" data-icon="SEO">SEO</span><span class="app-badge">NATIVE APP</span></div>
-          <h4>TakeOff SEO</h4>
-          <p>Dashboard SEO centrale per metadati, snippet, preview, contenuti mancanti e suggerimenti.</p>
-          <div class="app-card-foot"><span class="app-chip">CORE</span><span class="app-chip">CONFIGURABLE</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
+    <h2 class="pres-h pres-h-center">
+      I costi reali.<br />
+      <span class="grad-move">Il risparmio reale.</span>
+    </h2>
 
-<!-- ============================================================
-     DIVIDER 03 — I NUMERI
-     ============================================================ -->
-<section class="pres-divider" data-pres-divider>
-  <div class="pres-blob pres-blob-tl"></div>
-  <div class="pres-blob pres-blob-tr"></div>
-  <div class="pres-blob pres-blob-bl"></div>
-  <div class="pres-blob pres-blob-br"></div>
-  <h2 class="pres-divider-title grad-move">I numeri</h2>
-</section>
-
-<!-- ============================================================
-     S3 — I NUMERI (slide A: due card affiancate)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">03 — I numeri</span>
-  <div class="pres-slide-inner pres-slide-wide">
-    <div class="num-row">
+    <div class="num-row" style="margin-top: 56px;">
       <div class="num-card">
         <div class="num-big grad-move">$40 – $100</div>
         <div class="num-mid">al mese</div>
@@ -369,97 +226,61 @@
         <p class="num-desc">Il costo reale delle app necessarie per un ecommerce funzionale</p>
       </div>
     </div>
+
+    <div style="text-align: center; margin-top: 72px;">
+      <div class="num-huge">$1.400 – $4.500+</div>
+      <p class="num-huge-label grad-move">risparmio potenziale / anno</p>
+      <p class="num-huge-sub">Da scenario essenziale a ecommerce avanzato con search, resi, gift card, upsell e traduzioni</p>
+    </div>
+
+    <p class="pres-punch num-punch" style="text-align: center;">Meno abbonamenti. Meno plugin. <span class="grad-move">Più controllo.</span></p>
   </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
 </section>
 
 <!-- ============================================================
-     S3 — I NUMERI (slide B: scenario essenziale)
+     SLIDE 4 — COSTRUITO PER TE (consolidata)
      ============================================================ -->
 <section class="pres-slide" data-reveal>
   <div class="pres-blob pres-blob-side-l"></div>
-  <span class="pres-step">03 — I numeri</span>
-  <div class="pres-slide-inner pres-slide-center">
-    <div class="num-huge"><span data-counter-from="1400" data-counter-to="2600">$1.400 – $2.600</span></div>
-    <p class="num-huge-label grad-move">risparmio potenziale / anno</p>
-    <p class="num-huge-sub">Scenario ecommerce essenziale</p>
+  <div class="pres-slide-inner pres-slide-wide">
+    <h2 class="pres-h">
+      Costruito su misura,<br />
+      <span class="grad-move">supportato per davvero.</span>
+    </h2>
+
+    <div class="per-te-grid">
+      <div>
+        <p class="per-te-eye">Come funziona</p>
+        <ul class="pres-bullets pres-bullets-dot">
+          <li>Codice salvato e versionato su GitHub</li>
+          <li>Sito pubblicato su Cloudflare</li>
+          <li>CMS gestisce contenuti, prodotti, media e funzioni</li>
+          <li>Database e storage separati per ordine e performance</li>
+          <li>Il sito cresce nel tempo con nuove funzioni dedicate</li>
+        </ul>
+        <p class="per-te-mini">Non devi occuparti della parte tecnica. Lo configuriamo, testiamo e rendiamo pronto all'uso.</p>
+      </div>
+      <div>
+        <p class="per-te-eye">Non vieni lasciato da solo</p>
+        <ul class="pres-bullets pres-bullets-check">
+          <li>Onboarding iniziale e spiegazione del CMS</li>
+          <li>Supporto sul corretto utilizzo</li>
+          <li>Verifica delle funzioni principali</li>
+          <li>Correzione di eventuali errori tecnici</li>
+          <li>Controllo dopo la consegna</li>
+          <li>Supporto su configurazioni iniziali</li>
+        </ul>
+        <p class="per-te-mini">In ogni pacchetto è incluso un <strong class="grad-move">video guida completo del CMS</strong>, così saprai modificare tutto in autonomia.</p>
+      </div>
+    </div>
   </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
 </section>
 
 <!-- ============================================================
-     S3 — I NUMERI (slide C: scenario avanzato)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-l"></div>
-  <span class="pres-step">03 — I numeri</span>
-  <div class="pres-slide-inner pres-slide-center">
-    <div class="num-huge"><span data-counter-from="3000" data-counter-to="4500">$3.000 – $4.500+</span></div>
-    <p class="num-huge-label grad-move">risparmio potenziale / anno</p>
-    <p class="num-huge-sub">Scenario avanzato: search, resi, gift card, product feed, upsell, traduzioni</p>
-    <p class="pres-punch num-punch">Meno abbonamenti. Meno plugin. <span class="grad-move">Più controllo.</span></p>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
-
-<!-- ============================================================
-     DIVIDER 04 — COSTRUITO SU MISURA PER TE
-     ============================================================ -->
-<section class="pres-divider" data-pres-divider>
-  <div class="pres-blob pres-blob-tl"></div>
-  <div class="pres-blob pres-blob-tr"></div>
-  <div class="pres-blob pres-blob-bl"></div>
-  <div class="pres-blob pres-blob-br"></div>
-  <h2 class="pres-divider-title pres-divider-title-2line"><span>Costruito</span> <span>su misura</span> <span class="grad-move">per te</span></h2>
-</section>
-
-<!-- ============================================================
-     S4 — PER TE (slide A: Come funziona)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">04 — Per te</span>
-  <div class="pres-slide-inner">
-    <h2 class="pres-h pres-h-md">Come funziona, <span class="grad-move">in modo semplice.</span></h2>
-    <ul class="pres-bullets pres-bullets-dot">
-      <li>Il codice è salvato e versionato su GitHub</li>
-      <li>Il sito viene pubblicato su Cloudflare</li>
-      <li>Il CMS gestisce contenuti, prodotti, media e funzioni interne</li>
-      <li>Database e storage separati per ordine e performance</li>
-      <li>Il sito cresce nel tempo con nuove funzioni dedicate</li>
-    </ul>
-    <p class="pres-punch">Non devi occuparti della parte tecnica.<br /><span class="grad-move">Noi lo configuriamo, lo testiamo e lo rendiamo pronto all'uso.</span></p>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
-
-<!-- ============================================================
-     S4 — PER TE (slide B: Non vieni lasciato da solo)
-     ============================================================ -->
-<section class="pres-slide" data-reveal>
-  <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">04 — Per te</span>
-  <div class="pres-slide-inner">
-    <h2 class="pres-h pres-h-md">Non vieni <span class="grad-move">lasciato da solo.</span></h2>
-    <ul class="pres-bullets pres-bullets-check">
-      <li>Onboarding iniziale e spiegazione del CMS</li>
-      <li>Supporto sul corretto utilizzo</li>
-      <li>Verifica delle funzioni principali</li>
-      <li>Correzione di eventuali errori tecnici</li>
-      <li>Controllo dopo la consegna</li>
-      <li>Supporto su configurazioni iniziali</li>
-    </ul>
-    <p class="pres-punch">In ogni pacchetto è incluso un <span class="grad-move">video guida completo del CMS</span>, così saprai<br />modificare tutto in autonomia ogni volta che ne avrai bisogno.</p>
-  </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
-</section>
-
-<!-- ============================================================
-     S5 — PACCHETTI E PAGAMENTI
+     PACCHETTI & PAGAMENTI
      ============================================================ -->
 <section class="pres-slide pres-pricing" id="pricing" data-reveal>
   <div class="pres-blob pres-blob-side-r"></div>
-  <span class="pres-step">04 — Per te</span>
   <div class="pres-slide-inner pres-slide-wide">
     <h2 class="pres-h pres-h-md pres-h-center">I pacchetti <span class="grad-move">disponibili:</span></h2>
 
@@ -484,7 +305,7 @@
       <article class="pricing-card pricing-card-best">
         <span class="pricing-best-badge">CONSIGLIATO</span>
         <div class="pricing-card-head">
-          <h3>Pro <span class="pricing-dot">·</span> Consigliato</h3>
+          <h3>Pro</h3>
           <p class="pricing-tag">Advanced Ecommerce CMS</p>
           <p class="pricing-price">da <s>€ 3.000</s> <strong>€ 1.900</strong></p>
         </div>
@@ -521,11 +342,10 @@
       Pagamento sicuro Stripe · SSL · Apple Pay, Google Pay, carte, Klarna, SEPA · Ricevuta automatica
     </p>
   </div>
-  <span class="pres-arrow" aria-hidden="true">↗</span>
 </section>
 
 <!-- ============================================================
-     CLOSING — Nessun template. Nessun abbonamento. Tuo per sempre.
+     CTA FINALE
      ============================================================ -->
 <section class="pres-closing">
   <div class="pres-blob pres-blob-tl"></div>
@@ -539,7 +359,17 @@
       <span class="grad-move">Tuo per sempre.</span>
     </h2>
     <p class="pres-closing-sub">Disegnato su misura · Gestibile dal tuo team · Costruito per crescere</p>
-    <img src="/images/logo-white.svg" alt="TakeOff" class="pres-closing-logo" />
+
+    <a href="#pricing" class="btn btn-primary btn-arrow" style="margin-top: 32px; font-size: 18px; padding: 20px 36px;"><span>Vedi i pacchetti</span></a>
+
+    <svg viewBox="0 0 760 220" class="pres-closing-logo" xmlns="http://www.w3.org/2000/svg" aria-label="TakeOff" style="margin-top: 56px;">
+      <defs><linearGradient id="close-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ff5fad"/><stop offset="50%" stop-color="#ff9a7a"/><stop offset="100%" stop-color="#ffd65c"/>
+      </linearGradient></defs>
+      <text x="0" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">Take</text>
+      <ellipse cx="495" cy="120" rx="55" ry="78" stroke="url(#close-ring)" stroke-width="28" fill="none" transform="rotate(-15 495 120)"/>
+      <text x="555" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">ff</text>
+    </svg>
   </div>
 </section>
 

@@ -1529,7 +1529,12 @@ h1, h2, h3, h4, h5 {
    ===================================================== */
 
 /* Hide header + back-to-top + footer per Sam */
-.site-header, .site-footer, .back-to-top, .scroll-progress { display: none !important; }
+.site-footer, .back-to-top, .scroll-progress { display: none !important; }
+.site-header { display: block !important; }
+.site-header .main-nav, .site-header .menu-toggle { display: none !important; }
+.site-header .header-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; }
+.site-header .logo-img { height: 36px !important; width: auto !important; max-width: 130px; }
+.site-header .header-cta { display: inline-flex !important; }
 
 body { background: #0a0608; color: #f4f4f5; }
 main { background: #0a0608; }
@@ -1815,3 +1820,55 @@ main { background: #0a0608; }
   .pres-arrow { right: 24px; bottom: 24px; width: 44px; height: 44px; font-size: 22px; }
   .pres-divider { min-height: 60vh; }
 }
+
+/* ===== Hide eyebrow step e arrow (non voglio look-slide) ===== */
+.pres-step, .pres-arrow, .pres-divider { display: none !important; }
+
+/* ===== 3 colonne bullets ===== */
+.pres-bullets-3col { grid-template-columns: repeat(3, 1fr); gap: 12px 32px; }
+.pres-bullets-compact li { font-size: 15px; }
+@media (max-width: 980px) { .pres-bullets-3col { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .pres-bullets-3col { grid-template-columns: 1fr; } }
+
+/* ===== Per te grid 2 col ===== */
+.per-te-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+.per-te-eye {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--grad-static);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+.per-te-mini {
+  margin-top: 24px;
+  padding: 18px 22px;
+  background: rgba(255,95,173,0.08);
+  border: 1px solid rgba(255,95,173,0.25);
+  border-radius: 14px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.per-te-mini strong { color: #fff; -webkit-text-fill-color: #fff; }
+@media (max-width: 980px) { .per-te-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* ===== Site looks like a continuous landing, not separated slides ===== */
+.pres-slide {
+  min-height: auto !important;
+  padding: 100px 56px !important;
+  border: 0 !important;
+  background: linear-gradient(180deg, #0a0608 0%, #100408 50%, #0a0608 100%) !important;
+}
+.pres-slide + .pres-slide { padding-top: 80px !important; }
+
+/* Body top padding già coperto dalla hero che ha posizione propria, header fixed sopra */
