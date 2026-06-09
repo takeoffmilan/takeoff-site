@@ -2204,3 +2204,114 @@ main { background: #0a0608; }
   height: auto !important;
   margin: 48px auto 0 !important;
 }
+
+/* =====================================================
+   BULLET LIST → CARD/PILL STYLE PREMIUM
+   ===================================================== */
+
+/* Override stile dot/check vecchio */
+.pres-bullets-dot li::before,
+.pres-bullets-check li::before { content: none !important; }
+
+.pres-bullets {
+  gap: 12px 14px !important;
+  list-style: none;
+}
+
+.pres-bullets li {
+  position: relative;
+  padding: 14px 22px 14px 52px !important;
+  background: linear-gradient(135deg, rgba(255,95,173,0.06), rgba(255,214,92,0.03));
+  border: 1px solid rgba(255,95,173,0.18);
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
+              border-color 0.4s cubic-bezier(0.16,1,0.3,1),
+              background 0.4s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.pres-bullets li::before {
+  content: '' !important;
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5fad 0%, #ff9a7a 50%, #ffd65c 100%);
+  box-shadow: 0 0 16px rgba(255,95,173,0.5), inset 0 1px 2px rgba(255,255,255,0.3);
+  margin: 0 !important;
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.pres-bullets li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,95,173,0.4), rgba(255,214,92,0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pres-bullets li:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(255,95,173,0.12), rgba(255,214,92,0.06));
+  border-color: rgba(255,95,173,0.4);
+  box-shadow: 0 14px 32px rgba(255,95,173,0.18);
+}
+.pres-bullets li:hover::after { opacity: 1; }
+
+/* Check style: usa stesso pattern ma con icona check piccola sopra il dot */
+.pres-bullets-check li::before {
+  background: linear-gradient(135deg, #21E6C1, #00ff9d) !important;
+  box-shadow: 0 0 16px rgba(33,230,193,0.5), inset 0 1px 2px rgba(255,255,255,0.3) !important;
+}
+
+/* 2col layout */
+.pres-bullets-2col { grid-template-columns: 1fr 1fr; }
+.pres-bullets-3col { grid-template-columns: repeat(3, 1fr); }
+.pres-bullets-compact li { padding: 12px 18px 12px 48px !important; font-size: 14px; }
+
+@media (max-width: 720px) {
+  .pres-bullets-2col, .pres-bullets-3col { grid-template-columns: 1fr; }
+}
+
+/* Animazione ingresso stagger (override esistente) */
+[data-reveal].revealed .pres-bullets li {
+  animation: bulletIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes bulletIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* =====================================================
+   FOOTER/CLOSING ATTACCATO AL PRICING
+   ===================================================== */
+.pres-closing {
+  background: #0a0608 !important;
+  border-top: 0 !important;
+  margin-top: 0 !important;
+  padding: 80px 40px 100px !important;
+}
+.pres-pricing { padding-bottom: 80px !important; }
+
+/* Niente gap tra sezioni */
+.pres-slide + .pres-slide,
+.pres-slide + .pres-closing,
+.pres-pricing + .pres-closing { margin-top: 0; padding-top: 80px; }
+
