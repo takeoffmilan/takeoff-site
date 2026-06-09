@@ -120,15 +120,8 @@
 <!-- HEADER: logo sinistra + bottone destra (menu nav nascosto via CSS) -->
 <header class="site-header" data-header>
   <div class="header-inner">
-    <a href="#top" class="logo-link" aria-label="TakeOff home">
-      <svg viewBox="0 0 760 220" class="logo-img" xmlns="http://www.w3.org/2000/svg" aria-label="TakeOff">
-        <defs><linearGradient id="hdr-ring" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#ff5fad"/><stop offset="50%" stop-color="#ff9a7a"/><stop offset="100%" stop-color="#ffd65c"/>
-        </linearGradient></defs>
-        <text x="0" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">Take</text>
-        <ellipse cx="495" cy="120" rx="55" ry="78" stroke="url(#hdr-ring)" stroke-width="28" fill="none" transform="rotate(-15 495 120)"/>
-        <text x="555" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">ff</text>
-      </svg>
+    <a href="#top" class="logo-link logo-pill" aria-label="TakeOff home">
+      <img src="/images/logo.png" alt="TakeOff" class="logo-img" />
     </a>
     <a href="#pricing" class="btn btn-primary header-cta">Vedi i pacchetti</a>
   </div>
@@ -197,7 +190,7 @@
       </div>
     </div>
 
-    <p class="pres-punch" style="margin-top: 48px;">Un sito più libero, premium e <span class="grad-move">semplice da utilizzare</span>.</p>
+    
   </div>
 </section>
 
@@ -285,11 +278,11 @@
     <h2 class="pres-h pres-h-md pres-h-center">I pacchetti <span class="grad-move">disponibili:</span></h2>
 
     <div class="pricing-grid">
-      <article class="pricing-card">
+      <article class="pricing-card pricing-card-light">
         <div class="pricing-card-head">
           <h3>Base</h3>
           <p class="pricing-tag">Ecommerce CMS</p>
-          <p class="pricing-price">da <s>€ 2.000</s> <strong>€ 1.200</strong></p>
+          <p class="pricing-price">da <s>€ 2.000</s> <strong data-price-to="1200">€ <span data-counter>0</span></strong></p>
         </div>
         <ul class="pricing-features">
           <li>Design base personalizzato</li>
@@ -307,7 +300,7 @@
         <div class="pricing-card-head">
           <h3>Pro</h3>
           <p class="pricing-tag">Advanced Ecommerce CMS</p>
-          <p class="pricing-price">da <s>€ 3.000</s> <strong>€ 1.900</strong></p>
+          <p class="pricing-price">da <s>€ 3.000</s> <strong data-price-to="1900">€ <span data-counter>0</span></strong></p>
         </div>
         <ul class="pricing-features">
           <li><strong>Tutto Base +</strong></li>
@@ -320,7 +313,7 @@
         <a href="#" class="btn btn-primary pricing-cta" data-stripe="pro">Acquista a € 1.900</a>
       </article>
 
-      <article class="pricing-card">
+      <article class="pricing-card pricing-card-neon">
         <div class="pricing-card-head">
           <h3>Premium</h3>
           <p class="pricing-tag">Custom Ecommerce CMS</p>
@@ -338,9 +331,7 @@
       </article>
     </div>
 
-    <p class="pricing-trust">
-      Pagamento sicuro Stripe · SSL · Apple Pay, Google Pay, carte, Klarna, SEPA · Ricevuta automatica
-    </p>
+<p class="pricing-trust pricing-one-shot"><strong>Pagamento unico (one-shot)</strong> · Niente abbonamenti, niente costi ricorrenti, mai.</p>
   </div>
 </section>
 
@@ -360,16 +351,9 @@
     </h2>
     <p class="pres-closing-sub">Disegnato su misura · Gestibile dal tuo team · Costruito per crescere</p>
 
-    <a href="#pricing" class="btn btn-primary btn-arrow" style="margin-top: 32px; font-size: 18px; padding: 20px 36px;"><span>Vedi i pacchetti</span></a>
+    
 
-    <svg viewBox="0 0 760 220" class="pres-closing-logo" xmlns="http://www.w3.org/2000/svg" aria-label="TakeOff" style="margin-top: 56px;">
-      <defs><linearGradient id="close-ring" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#ff5fad"/><stop offset="50%" stop-color="#ff9a7a"/><stop offset="100%" stop-color="#ffd65c"/>
-      </linearGradient></defs>
-      <text x="0" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">Take</text>
-      <ellipse cx="495" cy="120" rx="55" ry="78" stroke="url(#close-ring)" stroke-width="28" fill="none" transform="rotate(-15 495 120)"/>
-      <text x="555" y="160" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="180" letter-spacing="-6" fill="#fff">ff</text>
-    </svg>
+    <div class="logo-pill logo-pill-lg" style="margin: 56px auto 0;"><img src="/images/logo.png" alt="TakeOff" /></div>
   </div>
 </section>
 

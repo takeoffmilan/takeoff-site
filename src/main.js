@@ -390,3 +390,69 @@ console.log(
   'font-weight:700;background:linear-gradient(120deg,#ff66c4,#ffde59);-webkit-background-clip:text;color:transparent;font-size:14px;',
   'color:#666;font-size:11px;'
 )
+
+// ============================================================
+// PRICING COUNTERS (animazione prezzi sale da 0)
+// ============================================================
+;(function() {
+  const priceEls = document.querySelectorAll('[data-price-to]')
+  if (!priceEls.length) return
+  const animateNum = (el, to, duration = 1800) => {
+    const counter = el.querySelector('[data-counter]')
+    if (!counter) return
+    const start = performance.now()
+    const ease = t => 1 - Math.pow(1 - t, 3)
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration)
+      const v = Math.round(to * ease(t))
+      counter.textContent = v.toLocaleString('it-IT')
+      if (t < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = '1'
+        animateNum(entry.target, parseInt(entry.target.dataset.priceTo, 10))
+        io.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.4 })
+  priceEls.forEach((el) => io.observe(el))
+})()
+
+// ============================================================
+// PARALLAX SUI BLOB (movimento scrolldriven)
+// ============================================================
+;(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  const blobs = document.querySelectorAll('.pres-blob')
+  if (!blobs.length) return
+  let ticking = false
+  const update = () => {
+    const sc = window.scrollY
+    blobs.forEach((blob, i) => {
+      const speed = (i % 3 === 0) ? 0.15 : (i % 3 === 1) ? -0.1 : 0.08
+      const offset = sc * speed
+      blob.style.transform = `translate(0, ${offset.toFixed(1)}px)`
+    })
+    ticking = false
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true }
+  }, { passive: true })
+  update()
+})()
+
+// ============================================================
+// HEADER nasconde se scroll su, mostra se scroll giù poco
+// (in realtà sempre visibile, ma con state glass quando scrolli)
+// ============================================================
+;(function() {
+  const hdr = document.querySelector('[data-header]')
+  if (!hdr) return
+  const sync = () => hdr.classList.toggle('scrolled', window.scrollY > 60)
+  window.addEventListener('scroll', sync, { passive: true })
+  sync()
+})()
